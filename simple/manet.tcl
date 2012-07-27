@@ -16,7 +16,7 @@ set val(ant)	Antenna/OmniAntenna	;# Antenna type
 #set val(ifq)	CMUPriQueue 		;# somente para DSR!
 set val(ifqlen)	100
 set val(nn)	2			;#Número de nós
-set val(rp)	OLSR			;#Protocolo
+set val(rp)	AODV			;#Protocolo
 
 #Cria o Escalonador de Eventos
 set ns [new Simulator]
