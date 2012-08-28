@@ -1,4 +1,5 @@
 out.*
+test*
 *.nam
 *.tr
 *.plot
