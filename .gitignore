@@ -4,3 +4,8 @@ test*
 *.tr
 *.plot
 *.log
+*.aux
+*.dvi
+*.ps
+*.png
+
