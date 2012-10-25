@@ -1,0 +1,21 @@
+digraph experimento1 {
+	node[color=grey,shape=circle,size=8,pin=true];
+	S01[label="S1",pos="0.6,0.1"];
+	S02[label="S2",pos="2.0,0.5"];
+	S03[label="S3",pos="3.4,0.1"];
+	S04[label="SS",pos="2.0,3.0"];
+
+	node[color=green,shape=box,size=8,pin=true];
+	DS01[label="DS 1",pos="0.6,4.6"];
+	DS02[label="DS 2",pos="2.0,1.5"];
+	DS03[label="DS 3",pos="3.4,4.6"];
+	DS04[label="DS S",pos="2.0,4.5"];
+	
+	S01 -> DS01 [label="at 0.1s \n 1.5m/s",fillcolor="palegreen"]
+	S02 -> DS02 [label="at 0.1s \n 1.5m/s"]
+	S03 -> DS03 [label="at 0.1s \n 1.5m/s"]
+	S04 -> DS04 [label="at 150.0s \n 1.5m/s"]
+
+	label="\n\nExperimento 1 \nÁrea 500x500m - 300 segundos \n*SN = Soldado \n*DS N = Destino do soldado"
+}
+

@@ -2,6 +2,7 @@
 
 \usepackage{sbc-template}
 \usepackage{graphicx,url}
+\graphicspath{{images/}}
 
 \usepackage[brazil]{babel}
 \usepackage[latin1]{inputenc}
@@ -9,10 +10,19 @@
 \sloppy
 
 \title{Estudos, simula\c{c}\~oes e compara\c{c}\~oes de protocolos de rede ad hoc m\'oveis em cen\'arios militares.}
-\author{F\'abio Leandro Janiszevski\inst{1}}
+\author{
+	F\'abio Leandro Janiszevski\inst{1}, 
+	Dr. Daniel Kikuti\inst{1}, 
+	Ms. Hermano Pereira\inst{2}
+}
 \address{
 	Universidade Estadual do Centro-Oeste - UNICENTRO
-	\email{fabiosammy@gmail.com}
+\nextinstitute
+	Universidade Tecnol\'ogica Federal do Paran\'a - UTFPR
+\email{
+	fabiosammy@gmail.com,
+	danielkikuti@yahoo.com.br,
+	pereira@hermano.com.br}
 }
 
 \begin{document}
@@ -22,21 +32,29 @@
 I am writting yet.
 \end{abstract}
 
+\begin{keyWord}
+Test1 Test2 Test3
+\end{keyWord}
+
 \begin{resumo}
 Estou escrevendo.
 \end{resumo}
 
+\begin{palavraChave}
+Teste1 Teste2 Teste3
+\end{palavraChave}
+
+
 \input{sections/introducao}		%Introdução
 \input{sections/historico}		%Histórico
-\input{sections/protocolos}		%Protocolos de roteamento
+\input{sections/protocolos}		%Protocolos de roteamento em redes ad hoc
 \input{sections/metodologia}	%Metodologia dos testes
 \input{sections/experimentos}	%Experimentos e resultados
 \input{sections/conclusao}		%Conclusão
 
-
-\section{Referencias bibliograficas}
-
-\bibliography{referencias/bibliografias}
+%Referencias bibliograficas sao editadas no arquivo referencias/bibliografias.bib
+\section{Refer\^encias bibliogr\'aficas}
 \bibliographystyle{sbc}
+\bibliography{referencias}
 
 \end{document}

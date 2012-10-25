@@ -8,4 +8,11 @@ test*
 *.dvi
 *.ps
 *.png
+!doc/TCC/**/*.png
+doc/TCC/TCC.pdf
+
+*.bbl
+*.blg
+
+*.dat
 

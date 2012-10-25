@@ -1,0 +1,33 @@
+digraph experimento2 {
+
+	node[color=grey,shape=circle,fixedsize=true,style="filled",size=18,pin=true];
+	S01[pos="0.0,4.0"]; S02[pos="0.5,4.0"]; S03[pos="0.0,4.5"]; S04[pos="0.5,4.5"];
+	S05[pos="0.0,2.0"]; S06[pos="0.5,2.0"]; S07[pos="0.0,2.5"]; S08[pos="0.5,2.5"];
+	S09[pos="2.0,0.0"]; S10[pos="2.5,0.0"]; S11[pos="2.0,0.5"]; S12[pos="2.5,0.5"];
+	S13[pos="4.0,0.0"]; S14[pos="4.5,0.0"]; S15[pos="4.0,0.5"]; S16[pos="4.5,0.5"];
+
+	node[color=green,shape=box,pin=true];
+	DS[label="Destino final",pos="6.0,3.5",width="2"];
+
+	//edge[style="snake=snake"]
+	S01 -> DS; S02 -> DS; S03 -> DS; S04 -> DS;
+	S05 -> DS; S06 -> DS; S07 -> DS; S08 -> DS;
+	S09 -> DS; S10 -> DS; S11 -> DS; S12 -> DS;
+	S13 -> DS; S14 -> DS; S15 -> DS; S16 -> DS;
+
+	node[color=green,shape=hexagon,pin=true];
+	Tank[label="Tanque",pos="0.0,0.0",width=1];
+
+	node[color=green,shape=box,style=filled,pin=true]
+	DST01[pos="1.0,1.0"]
+	DST02[pos="1.5,2.0"]
+	DST03[pos="3.0,2.0"]
+	DST04[pos="4.5,2.0"]
+	DST05[pos="3.0,3.0"]
+	DST06[pos="4.0,4.0"]
+
+	Tank -> DST01 -> DST02 -> DST03 -> DST04 -> DST05 -> DST06 -> DS[style="dashed",color="green"];
+
+	label="\n\nExperimento 2 \nÁrea 1000x1000m - 600 segundos \n*SN = Soldado \n*DST NN = Destino do tanque"
+}
+

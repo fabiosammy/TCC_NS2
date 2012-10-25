@@ -8,77 +8,72 @@
 #======================================================================
 # Functions
 #======================================================================
-proc attach-expoo-cbr { node sink } {
+proc attach-expoo-cbr { this_node this_sink } {
 	#Get an instance of the simulator
 	set ns [Simulator instance]
 
 	#Create a UDP agent and attach it to the node
-	set source [new Agent/UDP]
-	$source set class_ 1
-	$ns attach-agent $node $source
+	set this_source [new Agent/UDP]
+	$ns attach-agent $this_node $this_source
 
 	#Create an Expoo traffic agent and set its configuration parameters
-	set traffic [new Application/Traffic/CBR]
-	$traffic set packetSize 500
-	$traffic set rate 11Mb
+	set this_traffic [new Application/Traffic/CBR]
+	$this_traffic set packetSize 500
+	$this_traffic set rate 11Mb
 
 	# Attach traffic source to the traffic generator
-	$traffic attach-agent $source
+	$this_traffic attach-agent $this_source
 	#Connect the source and the sink
-	$ns connect $source $sink
-	puts "Test this nodes: $node to $sink; UDP=$source; CBR=$traffic"
-	return $traffic
+	$ns connect $this_source $this_sink
+	puts "Test this nodes: $this_node to $this_sink; UDP=$this_source; CBR=$this_traffic"
+	return $this_traffic
+
 }
 
-proc record {} {
-	global sink0 sink1 sink2 f0 f1 f2
+proc record { valnn } {
+	global f0 f1 f2
+	global sink
 
 	#Get an instance of the simulator
 	set ns [Simulator instance]
 
 	#Set the time after which the procedure should be called again
-	set time 5.0
+	set time 1.0
 
 	#How many lost packages?
-	set lost0 [$sink0 set nlost_]
-	set lost1 [$sink1 set nlost_]
-	set lost2 [$sink2 set nlost_]
+	for {set i 0} {$i < $valnn } {incr i} {
+		set lost($i) [$sink($i) set nlost_]
+	}
 	#How many bytes have been received by the traffic sinks?
-	set band0 [$sink0 set bytes_]
-	set band1 [$sink1 set bytes_]
-	set band2 [$sink2 set bytes_]
+	for {set i 0} {$i < $valnn } {incr i} {
+		set band($i) [$sink($i) set bytes_]
+	}
 	#How many packages expected?
-	set some0 [$sink0 set npkts_]
-	set some1 [$sink1 set npkts_]
-	set some2 [$sink2 set npkts_]
+	for {set i 0} {$i < $valnn } {incr i} {
+		set some($i) [$sink($i) set npkts_]
+	}
 
 	#Get the current time
 	set now [$ns now]
 
+	puts $f0 "$now\t$lost(0)\t$lost(1)\t$lost(2)\t$lost(3)"
 	#Calculate the bandwidth (in MBit/s) and write it to the files
-	puts $f0 "$now\t$lost0\t$lost1\t$lost2"
-	puts $f1 "$now\t[expr $band0/$time*8/1000000]\t[expr $band1/$time*8/1000000]\t[expr $band2/$time*8/1000000]"
-	puts $f2 "$now\t$some0\t$some1\t$some2"
+	puts $f1 "$now\t[expr $band(0)/$time*8/1000000]\t[expr $band(1)/$time*8/1000000]\t[expr $band(2)/$time*8/1000000]\t[expr $band(3)/$time*8/1000000]"
+	puts $f2 "$now\t$some(0)\t$some(1)\t$some(2)\t$some(3)"
 
 	#Reset the bytes_ values on the traffic sinks
-	$sink0 clear
-	$sink1 clear
-	$sink2 clear
-	#Lost packages reset
-	$sink0 set nlost_ 0
-	$sink1 set nlost_ 0
-	$sink2 set nlost_ 0
-	#Received packages
-	$sink0 set bytes_ 0
-	$sink1 set bytes_ 0
-	$sink2 set bytes_ 0
-	#
-	$sink0 set npkts_ 0
-	$sink1 set npkts_ 0
-	$sink2 set npkts_ 0
+	for {set i 0} {$i < $valnn } {incr i} {
+		$sink($i) clear
+		#Lost packages reset
+		$sink($i) set nlost_ 0
+		#Received packages
+		$sink($i) set bytes_ 0
+		#
+		$sink($i) set npkts_ 0
+	}
 
 	#Re-schedule the procedure
-	$ns at [expr $now+$time] "record"
+	$ns at [expr $now+$time] "record $valnn"
 }
 
 proc stop {} {
@@ -103,15 +98,14 @@ set val(mac)	Mac/802_11		;# MAC type
 set val(ifq)	Queue/DropTail/PriQueue	;# Interface queue type
 set val(ll)	LL			;# Link layer type
 set val(ant)	Antenna/OmniAntenna	;# Antenna type
-#set val(ifq)	CMUPriQueue 		;# somente para DSR!
 set val(ifqlen)	100			;#Max packet in ifq
 set AgentTrace	ON			;#
 set RouterTrace	ON			;#
 set MacTrace	ON			;#
 set Movement	ON			;#
-set val(nn)	3			;#Número de nós
+set val(nn)	4			;#Número de nós
 set val(rp)	AODV			;#Protocolo
-set val(t)	200			;#Tempo que finaliza
+set val(t)	300			;#Tempo de duração da simulação (em segundos)
 set val(x)	500			;#Tamanho X
 set val(y)	500			;#Tamanho Y
 
@@ -140,9 +134,9 @@ set nf [open out.nam w]
 $ns namtrace-all-wireless $nf $val(x) $val(y)	;#Para uma área de 500 por 500 metros
 
 # Arquivos de estatística
-set f0 [open out0.tr w]
-set f1 [open out1.tr w]
-set f2 [open out2.tr w]
+set f0 [open lost.dat w]
+set f1 [open band.dat w]
+set f2 [open expc.dat w]
 
 # Cria a topologia
 set topo [new Topography]
@@ -169,110 +163,102 @@ $ns node-config -adhocRouting $val(rp) \
 
 # Configure nodes
 for {set i 0} {$i < $val(nn) } {incr i} {
-	set node_($i) [$ns node]
-	$node_($i) random-motion 0	;#Desabilitar movimento randômico dos nós
+	set node($i) [$ns node]
+#	$node($i) random-motion 0	;#Desabilitar movimento randômico dos nós
+	$ns initial_node_pos $node($i) 30
 }
 
 # Posiciona os nos
-# NÓ 0
-$node_(0) set X_  10.0; $node_(0) set Y_  50.0; $node_(0) set Z_   0.0
-# NÓ 1
-$node_(1) set X_ 125.0; $node_(1) set Y_  70.0; $node_(1) set Z_   0.0
-# NÓ 2
-$node_(2) set X_ 230.0; $node_(2) set Y_  50.0; $node_(2) set Z_   0.0
-# NÓ 3
-#$node_(3) set X_ 150.0; #$node_(3) set Y_ 100.0; #$node_(3) set Z_   0.0
+# Soldado 0 
+$node(0) set X_  60.0; $node(0) set Y_  10.0; $node(0) set Z_   0.0
+$ns at 0.0 "$node(0) label Soldier_0"
+# Soldado 1
+$node(1) set X_ 200.0; $node(1) set Y_  50.0; $node(1) set Z_   0.0
+$ns at 0.0 "$node(1) label Soldier_1"
+# Soldado 2
+$node(2) set X_ 340.0; $node(2) set Y_  10.0; $node(2) set Z_   0.0
+$ns at 0.0 "$node(2) label Soldier_2"
+# Super Soldado
+$node(3) set X_ 200.0; $node(3) set Y_ 300.0; $node(3) set Z_   0.0
+$ns at 0.0 "$node(3) label Super_Soldier"
 
-
-#Posição inicial dos nós no NAM
-#$ns initial_node_pos <node> <size>
-# * <size> = Tamanho do nó no NAM
-for {set i 0} {$i < $val(nn)} {incr i} {
-	$ns initial_node_pos $node_($i) 30
-}
-
-# No1 segue em direcao ao no 0. Depois se afasta.
+# Comandos de movimento 
 # sintaxe:
 # <ns> at <tempo> "<nó> setdest <ponto X> <ponto Y> <Velocidade m/s>
-$ns at 0.1 "$node_(0) setdest 450.0 450.0  1.5"
-$ns at 0.1 "$node_(1) setdest 450.0 450.0  1.5"
-$ns at 0.1 "$node_(2) setdest 450.0 450.0 10.5"
-#$ns at 0.1 "$node_(3) setdest 450.0 450.0 1.5"
-
-#Label define
-$ns at 0.0 "$node_(0) label Soldier_1"
-$ns at 0.0 "$node_(1) label Soldier_2"
-$ns at 0.0 "$node_(2) label Tank"
+$ns at   0.1 "$node(0) setdest  60.0 460.0  1.5"
+$ns at   0.1 "$node(1) setdest 200.0 150.0  1.5"
+$ns at   0.1 "$node(2) setdest 340.0 460.0  1.5"
+$ns at   0.1 "$node(3) setdest 200.0 300.0  1.5"
+$ns at 150.0 "$node(3) setdest 200.0 450.0  1.5"
 
 #Color packages
-$node_(2) color green
-$ns at 0.0 "$node_(2) color green"
+$node(3) color green
+$ns at 0.1 "$node(3) color green"
 
 #SINK
-set sink0 [new Agent/LossMonitor]
-set sink1 [new Agent/LossMonitor]
-set sink2 [new Agent/LossMonitor]
-#set sink0 [new Agent/Null] 
-#set sink1 [new Agent/Null] 
-#set sink2 [new Agent/Null] 
+for {set i 0} {$i < $val(nn) } {incr i} {
+	set sink($i) [new Agent/LossMonitor]
+	$ns attach-agent $node($i) $sink($i)
+}
 
-$ns attach-agent $node_(0) $sink0
-$ns attach-agent $node_(1) $sink1
-$ns attach-agent $node_(2) $sink2
+#CBR Sources
+set source(0)  [attach-expoo-cbr $node(1) $sink(0)]
+$ns at   0.1 "$source(0) start"
+$ns at 100.0 "$source(0) stop"
+set source(1)  [attach-expoo-cbr $node(2) $sink(0)]
+$ns at   0.1 "$source(1) start"
+$ns at 290.0 "$source(1) stop"
+#set source(2)  [attach-expoo-cbr $node(3) $sink(0)]
+#$ns at 150.0 "$source(2) start"
+#$ns at 290.0 "$source(2) stop"
 
-#
-set val(nSources) 6
-set source0 [attach-expoo-cbr $node_(1) $sink0]
-set source1 [attach-expoo-cbr $node_(2) $sink0]
-set source2 [attach-expoo-cbr $node_(0) $sink1]
-set source3 [attach-expoo-cbr $node_(2) $sink1]
-set source4 [attach-expoo-cbr $node_(0) $sink2]
-set source5 [attach-expoo-cbr $node_(1) $sink2]
+set source(3)  [attach-expoo-cbr $node(0) $sink(1)]
+$ns at   0.1 "$source(3) start"
+$ns at 100.0 "$source(3) stop"
+set source(4)  [attach-expoo-cbr $node(2) $sink(1)]
+$ns at   0.1 "$source(4) start"
+$ns at 100.0 "$source(3) stop"
+set source(5)  [attach-expoo-cbr $node(3) $sink(1)]
+$ns at 150.0 "$source(5) start"
+$ns at 100.0 "$source(3) stop"
 
-# Uso de cores para identificação no NAM
-$ns color 1 magenta
-$ns color 2 blue
-$ns color 3 cyan
-$ns color 4 green
-$ns color 5 yellow
-$ns color 6 black
-$ns color 7 magenta
-$ns color 8 gold
-$ns color 9 red
-$ns color 10 cornflowerblue
-$ns color 11 deepskyblue
-$ns color 12 steelblue
-$ns color 13 navy
+set source(6)  [attach-expoo-cbr $node(0) $sink(2)]
+$ns at   0.1 "$source(6) start"
+$ns at 290.0 "$source(6) stop"
+set source(7)  [attach-expoo-cbr $node(1) $sink(2)]
+$ns at   0.1 "$source(7) start"
+$ns at 100.0 "$source(7) stop"
+set source(8)  [attach-expoo-cbr $node(3) $sink(2)]
+$ns at 150.0 "$source(8) start"
+$ns at 290.0 "$source(8) stop"
 
-include ../scen1.test
+#set source(9)  [attach-expoo-cbr $node(0) $sink(3)]
+#$ns at 150.0 "$source(9) start"
+#$ns at 290.0 "$source(9) stop"
+#set source(10) [attach-expoo-cbr $node(1) $sink(3)]
+#$ns at 150.0 "$source(10) start"
+#$ns at 290.0 "$source(10) stop"
+set source(11) [attach-expoo-cbr $node(2) $sink(3)]
+$ns at 150.0 "$source(11) start"
+$ns at 290.0 "$source(11) stop"
+
+#Parada da comunicação (10 segundos antes de terminar a simulação)
+#set val(nSources) 12
+#for {set i 0} {$i < $val(nSources) } {incr i} {
+#	$ns at [expr $val(t)-10] "$source($i) stop"
+#	puts "Stop at [expr $val(t)-10] on Index: $i and source $source($i)" 
+#}
 
 #======================================================================
 # Simulation Control
 #======================================================================
 for {set i 0} {$i < $val(nn) } {incr i} {
-	$ns at $val(t).0 "$node_($i) reset";
+	$ns at $val(t) "$node($i) reset";
 }
 
 #Schedules
-$ns at 0.0 "record"
-#for {set i 0} {$i < $val(nSources) } {incr i} {
-#	$ns at 0.1 "$source$i start"
-#	$ns at [expr $val(t)-10] "$source$i stop"
-#	puts "Stop at [expr $val(t)-10] on Index: $i and source $source$i" 
-#}
-$ns at 0.1 "$source0 start"
-$ns at 0.1 "$source1 start"
-$ns at 0.1 "$source2 start"
-$ns at 0.1 "$source3 start"
-$ns at 0.1 "$source4 start"
-$ns at 0.1 "$source5 start"
-$ns at [expr $val(t)-10] "$source0 stop"
-$ns at [expr $val(t)-10] "$source1 stop"
-$ns at [expr $val(t)-10] "$source2 stop"
-$ns at [expr $val(t)-10] "$source3 stop"
-$ns at [expr $val(t)-10] "$source4 stop"
-$ns at [expr $val(t)-10] "$source5 stop"
-#puts "In [expr $val(t)-10] we have sttoped the source traffic" 
+$ns at 0.0 "record $val(nn)"
+puts "In [expr $val(t)-10] we have sttoped the source traffic" 
 $ns at $val(t).0001 "$ns nam-end-wireless $val(t).0002"
 $ns at $val(t).0002 "stop"
 $ns at $val(t).0003 "puts \"NS EXITING...\" ; $ns halt"
