@@ -11,9 +11,11 @@ reset
 #set output 'lost.svg'
 
 #WTX File
-set terminal wxt enhanced font 'Verdana,9' persist
-set output 'lost.wxt'
+#set terminal wxt enhanced font 'Verdana,9' persist
+#set output 'lost.wxt'
 
+set terminal postscript eps enhanced color font 'Helvetica,10' 
+set output 'lost.eps'
 
 #Estilo
 set style line

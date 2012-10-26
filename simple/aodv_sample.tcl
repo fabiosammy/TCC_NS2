@@ -38,7 +38,7 @@ proc record { valnn } {
 	set ns [Simulator instance]
 
 	#Set the time after which the procedure should be called again
-	set time 1.0
+	set time 5.0
 
 	#How many lost packages?
 	for {set i 0} {$i < $valnn } {incr i} {
@@ -202,9 +202,9 @@ for {set i 0} {$i < $val(nn) } {incr i} {
 }
 
 #CBR Sources
-set source(0)  [attach-expoo-cbr $node(1) $sink(0)]
-$ns at   0.1 "$source(0) start"
-$ns at 100.0 "$source(0) stop"
+#set source(0)  [attach-expoo-cbr $node(1) $sink(0)]
+#$ns at   0.1 "$source(0) start"
+#$ns at 100.0 "$source(0) stop"
 set source(1)  [attach-expoo-cbr $node(2) $sink(0)]
 $ns at   0.1 "$source(1) start"
 $ns at 290.0 "$source(1) stop"
@@ -212,25 +212,25 @@ $ns at 290.0 "$source(1) stop"
 #$ns at 150.0 "$source(2) start"
 #$ns at 290.0 "$source(2) stop"
 
-set source(3)  [attach-expoo-cbr $node(0) $sink(1)]
-$ns at   0.1 "$source(3) start"
-$ns at 100.0 "$source(3) stop"
-set source(4)  [attach-expoo-cbr $node(2) $sink(1)]
-$ns at   0.1 "$source(4) start"
-$ns at 100.0 "$source(3) stop"
-set source(5)  [attach-expoo-cbr $node(3) $sink(1)]
-$ns at 150.0 "$source(5) start"
-$ns at 100.0 "$source(3) stop"
+#set source(3)  [attach-expoo-cbr $node(0) $sink(1)]
+#$ns at   0.1 "$source(3) start"
+#$ns at 100.0 "$source(3) stop"
+#set source(4)  [attach-expoo-cbr $node(2) $sink(1)]
+#$ns at   0.1 "$source(4) start"
+#$ns at 100.0 "$source(3) stop"
+#set source(5)  [attach-expoo-cbr $node(3) $sink(1)]
+#$ns at 150.0 "$source(5) start"
+#$ns at 100.0 "$source(3) stop"
 
-set source(6)  [attach-expoo-cbr $node(0) $sink(2)]
-$ns at   0.1 "$source(6) start"
-$ns at 290.0 "$source(6) stop"
-set source(7)  [attach-expoo-cbr $node(1) $sink(2)]
-$ns at   0.1 "$source(7) start"
-$ns at 100.0 "$source(7) stop"
-set source(8)  [attach-expoo-cbr $node(3) $sink(2)]
-$ns at 150.0 "$source(8) start"
-$ns at 290.0 "$source(8) stop"
+#set source(6)  [attach-expoo-cbr $node(0) $sink(2)]
+#$ns at   0.1 "$source(6) start"
+#$ns at 290.0 "$source(6) stop"
+#set source(7)  [attach-expoo-cbr $node(1) $sink(2)]
+#$ns at   0.1 "$source(7) start"
+#$ns at 100.0 "$source(7) stop"
+#set source(8)  [attach-expoo-cbr $node(3) $sink(2)]
+#$ns at 150.0 "$source(8) start"
+#$ns at 290.0 "$source(8) stop"
 
 #set source(9)  [attach-expoo-cbr $node(0) $sink(3)]
 #$ns at 150.0 "$source(9) start"
@@ -238,9 +238,9 @@ $ns at 290.0 "$source(8) stop"
 #set source(10) [attach-expoo-cbr $node(1) $sink(3)]
 #$ns at 150.0 "$source(10) start"
 #$ns at 290.0 "$source(10) stop"
-set source(11) [attach-expoo-cbr $node(2) $sink(3)]
-$ns at 150.0 "$source(11) start"
-$ns at 290.0 "$source(11) stop"
+#set source(11) [attach-expoo-cbr $node(2) $sink(3)]
+#$ns at 150.0 "$source(11) start"
+#$ns at 290.0 "$source(11) stop"
 
 #Parada da comunicação (10 segundos antes de terminar a simulação)
 #set val(nSources) 12
