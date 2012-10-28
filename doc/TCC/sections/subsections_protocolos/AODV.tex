@@ -1,0 +1,12 @@
+\subsection{\textit{Ad hoc on demand distance vector} - AODV}
+O protocolo AODV \'e um protocolo reativo, baseado em vetor de dist\^ancias, e pode ser considerado como uma combina\c{c}\~ao de outros dois protocolos, denominados DSR e DSDV. 
+O AODV tem a base do DSR, o qual \'e baseado sob demanda, ou seja, descobre rotas somente quando necess\'ario, e utiliza os mecanismos de descoberta de rotas e manuten\c{c}\~ao de rotas.
+Entretando, o AODV utiliza a caracter\'istica do DSDV de obrigar todos os n\'os intermedi\'arios a estabelecerem dinamicamente entradas em tabelas de roteamento locais para cada destino ativo.
+Cada n\'o tem conhecimento do pr\'oximo salto para alcan\c{c}ar o destino e a dist\^ancia em n\'umero de saltos.
+Pode ser considerado como uma vers\~ao melhorada do DSDV, uma ver que seu funcionamento baseado em demanda minimiza o n\'umero de inunda\c{c}\~oes na rede exigido pelo DSDV para cria\c{c}\~ao de rotas.
+
+\subsubsection{Limita\c{c}\~oes e desvantagens do AODV}
+\begin{description}
+	\item[Necessidade de um meio de propaga\c{c}\~ ao:] O algoritmo necessita que os n\'os no meio da propaga\c{c}\~ ao possam detectar outros 
+	\item[N\~ao reutiliza informa\c{c}\~oes de roteamento] O AODV carede de efici\^encia na t\'ecnica de manuten\c{c}\~ao de suas rotas. Informa\c{c}\~oes de roteamento s\~ao sempre atualizadas em cada demanda, inclu\'indo casos comuns de tr\'afego. \cite{ramachandran}
+\end{description}
