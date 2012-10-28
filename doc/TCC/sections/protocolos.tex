@@ -1,21 +1,22 @@
-\section{Protocolos de roteamento em redes ad hoc}
-Em redes m\'oveis ad hoc, uma rota entre dois n\'os pode ser formada por v\'arios saltos atrav\'es de um ou mais n\'os na rede. 
+\section{Protocolos de roteamento em redes \textit{ad hoc}}
+Em redes m\'oveis \textit{ad hoc}, uma rota entre dois n\'os pode ser formada por v\'arios saltos atrav\'es de um ou mais n\'os na rede. 
 
-Os protocolos s\~ao variados, mas segundo \cite{gorantala}, somente dois s\~ao de suma import\^ancia da rede, o DSDV(Destination Sequenced Distance Vector), para redes pequenas, e o AODV(Ad-hoc On-Demand Distance Vector), para redes ad hoc em geral. Cada protocolo trabalha de uma forma diferente, em que estes podem ser classificados em pr\'o-ativo ou reativo. "Os protocolos pr\'o-ativos mant\^em rotas para todos os n\'os da rede, independente do uso ou necessidade destas rotas. (...) J\'a os protocolos reativos iniciam as atividades de roteamento de acordo com a demanda" \cite{pereira}.
+Os protocolos s\~ao variados, mas segundo \cite{gorantala}, somente dois s\~ao de suma import\^ancia da rede, o DSDV(\textit{Destination Sequenced Distance Vector}), para redes pequenas, e o AODV(\textit{Ad-hoc On-Demand Distance Vector}), para redes \textit{ad hoc} em geral. Cada protocolo trabalha de uma forma diferente, em que estes podem ser classificados em pr\'o-ativo ou reativo. "Os protocolos pr\'o-ativos mant\^em rotas para todos os n\'os da rede, independente do uso ou necessidade destas rotas. (...) J\'a os protocolos reativos iniciam as atividades de roteamento de acordo com a demanda" \cite{pereira}.
 
-Os roteadores em uma rede ad hoc trocam informa\c{c}\~oes de roteamento uns com os outros com a finalidade de tomar conhecimento das disponibilidades de rotas e da topologia da rede.\cite{pereira}
+Os roteadores em uma rede \textit{ad hoc} trocam informa\c{c}\~oes de roteamento uns com os outros com a finalidade de tomar conhecimento das disponibilidades de rotas e da topologia da rede.\cite{pereira}
 
-\subsection{Ad hoc on demand distance vector - AODV}
+%Arrumar
+\textit{Abaixo citei tudo \cite{gorantala}}
+
+\subsection{\textit{Ad hoc on demand distance vector} - AODV}
 Reativo, inicia as atividades de roteamento de acordo com a demanda.
 
+\subsection{\textit{Destination sequenced distance vector} - DSDV}
+O protocolo DSDV \'e um protocolo de roteamento proativo\cite{gorantala}, baseado no algoritmo de vetor de dist\^ancias, que trabalha requisitando periodicamente, de cada um dos n\'os vizinhos, suas tabelas de roteamento, com a finalidade de mant\^e-las atualizadas. Cada n\'o da rede mant\'em uma tabela de roteamento contendo o pr\'oximo salto e o n\'umero de saltos para cada destino alcan\c{c}\'avel. As tabelas incluem rotas para todos os n\'os da rede, mesmo que nunca seja necess\'ario enviar pacote para este n\'o. Cada n\'o mant\'em apenas uma rota para cada destino.
 
-\subsection{Destination sequenced distance vector - DSDV}
 
-O protocolo DSDV \'e um protocolo de roteamento proativo, baseado no algoritmo de vetor de dist\^ancias, que trabalha requisitando periodicamente, de cada um dos n\'os vizinhos, suas tabelas de roteamento, com a finalidade de mant\^e-las atualizadas. Cada n\'o da rede mant\'em uma tabela de roteamento contendo o pr\'oximo salto e o n\'umero de saltos para cada destino alcan\c{c}\'avel. As tabelas incluem rotas para todos os n\'os da rede, mesmo que nunca seja necess\'ario enviar pacote para este n\'o. Cada n\'o mant\'em apenas uma rota para cada destino.
 
 Pr\'o-ativo, mant\'em rotas para todos os n\'os da rede, independente do uso dessa rota.
 
-
-\subsection{Optimized link state routing - OLSR}
+\subsection{\textit{Optimized link state routing} - OLSR}
 Pr\'o-ativo, marca\c{c}\~ao especial dos vizinhos.
-
