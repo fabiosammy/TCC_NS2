@@ -1,0 +1,659 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%Creator: Graphviz version 2.20.2 (Tue Mar  2 19:03:41 UTC 2010)
+%%For: (fabiosammy) Fabio L. Janiszevski,,,
+%%Title: aodvOperation
+%%Pages: 1
+%%BoundingBox: 36 36 1202 616
+%%EndComments
+save
+%%BeginProlog
+/DotDict 200 dict def
+DotDict begin
+
+/setupLatin1 {
+mark
+/EncodingVector 256 array def
+ EncodingVector 0
+
+ISOLatin1Encoding 0 255 getinterval putinterval
+EncodingVector 45 /hyphen put
+
+% Set up ISO Latin 1 character encoding
+/starnetISO {
+        dup dup findfont dup length dict begin
+        { 1 index /FID ne { def }{ pop pop } ifelse
+        } forall
+        /Encoding EncodingVector def
+        currentdict end definefont
+} def
+/Times-Roman starnetISO def
+/Times-Italic starnetISO def
+/Times-Bold starnetISO def
+/Times-BoldItalic starnetISO def
+/Helvetica starnetISO def
+/Helvetica-Oblique starnetISO def
+/Helvetica-Bold starnetISO def
+/Helvetica-BoldOblique starnetISO def
+/Courier starnetISO def
+/Courier-Oblique starnetISO def
+/Courier-Bold starnetISO def
+/Courier-BoldOblique starnetISO def
+cleartomark
+} bind def
+
+%%BeginResource: procset graphviz 0 0
+/coord-font-family /Times-Roman def
+/default-font-family /Times-Roman def
+/coordfont coord-font-family findfont 8 scalefont def
+
+/InvScaleFactor 1.0 def
+/set_scale {
+       dup 1 exch div /InvScaleFactor exch def
+       scale
+} bind def
+
+% styles
+/solid { [] 0 setdash } bind def
+/dashed { [9 InvScaleFactor mul dup ] 0 setdash } bind def
+/dotted { [1 InvScaleFactor mul 6 InvScaleFactor mul] 0 setdash } bind def
+/invis {/fill {newpath} def /stroke {newpath} def /show {pop newpath} def} bind def
+/bold { 2 setlinewidth } bind def
+/filled { } bind def
+/unfilled { } bind def
+/rounded { } bind def
+/diagonals { } bind def
+
+% hooks for setting color 
+/nodecolor { sethsbcolor } bind def
+/edgecolor { sethsbcolor } bind def
+/graphcolor { sethsbcolor } bind def
+/nopcolor {pop pop pop} bind def
+
+/beginpage {	% i j npages
+	/npages exch def
+	/j exch def
+	/i exch def
+	/str 10 string def
+	npages 1 gt {
+		gsave
+			coordfont setfont
+			0 0 moveto
+			(\() show i str cvs show (,) show j str cvs show (\)) show
+		grestore
+	} if
+} bind def
+
+/set_font {
+	findfont exch
+	scalefont setfont
+} def
+
+% draw text fitted to its expected width
+/alignedtext {			% width text
+	/text exch def
+	/width exch def
+	gsave
+		width 0 gt {
+			[] 0 setdash
+			text stringwidth pop width exch sub text length div 0 text ashow
+		} if
+	grestore
+} def
+
+/boxprim {				% xcorner ycorner xsize ysize
+		4 2 roll
+		moveto
+		2 copy
+		exch 0 rlineto
+		0 exch rlineto
+		pop neg 0 rlineto
+		closepath
+} bind def
+
+/ellipse_path {
+	/ry exch def
+	/rx exch def
+	/y exch def
+	/x exch def
+	matrix currentmatrix
+	newpath
+	x y translate
+	rx ry scale
+	0 0 1 0 360 arc
+	setmatrix
+} bind def
+
+/endpage { showpage } bind def
+/showpage { } def
+
+/layercolorseq
+	[	% layer color sequence - darkest to lightest
+		[0 0 0]
+		[.2 .8 .8]
+		[.4 .8 .8]
+		[.6 .8 .8]
+		[.8 .8 .8]
+	]
+def
+
+/layerlen layercolorseq length def
+
+/setlayer {/maxlayer exch def /curlayer exch def
+	layercolorseq curlayer 1 sub layerlen mod get
+	aload pop sethsbcolor
+	/nodecolor {nopcolor} def
+	/edgecolor {nopcolor} def
+	/graphcolor {nopcolor} def
+} bind def
+
+/onlayer { curlayer ne {invis} if } def
+
+/onlayers {
+	/myupper exch def
+	/mylower exch def
+	curlayer mylower lt
+	curlayer myupper gt
+	or
+	{invis} if
+} def
+
+/curlayer 0 def
+
+%%EndResource
+%%EndProlog
+%%BeginSetup
+14 default-font-family set_font
+1 setmiterlimit
+% /arrowlength 10 def
+% /arrowwidth 5 def
+
+% make sure pdfmark is harmless for PS-interpreters other than Distiller
+/pdfmark where {pop} {userdict /pdfmark /cleartomark load put} ifelse
+% make '<<' and '>>' safe on PS Level 1 devices
+/languagelevel where {pop languagelevel}{1} ifelse
+2 lt {
+    userdict (<<) cvn ([) cvn load put
+    userdict (>>) cvn ([) cvn load put
+} if
+
+%%EndSetup
+setupLatin1
+%%Page: 1 1
+%%PageBoundingBox: 36 36 1202 616
+%%PageOrientation: Portrait
+0 0 1 beginpage
+gsave
+36 36 1166 580 boxprim clip newpath
+1 1 set_scale 0 rotate 40 40 translate
+% S
+gsave
+1 setlinewidth
+0.000 0.000 0.000 nodecolor
+newpath 633 572 moveto
+165 572 lineto
+165 462 lineto
+633 462 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+361 555.4 moveto 76 (Source \(S\) ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+174.5 538.4 moveto 449 (Inicia a descoberta de rotas enviando RREQ para os nós A, B e C ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+293 521.4 moveto 212 (Recebe RREP dos nós A, B e C ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+175 504.4 moveto 448 (Escolhe o caminho por C, pois tem o maior número de sequência ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+250 487.4 moveto 298 (Atualiza as informações na tabela de rotas ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+173 470.4 moveto 452 (Inicia a comunicação com o destino através do caminho escolhido.) alignedtext
+grestore
+% A
+gsave
+1 setlinewidth
+0.000 0.000 0.000 nodecolor
+newpath 226 407.5 moveto
+0 407.5 lineto
+0 280.5 lineto
+226 280.5 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+106 390.9 moveto 14 (A ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+28 373.9 moveto 170 (Verifica rota para destn. ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+45.5 356.9 moveto 135 (Não encontra rota. ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+20.5 339.9 moveto 185 (Define o caminho reverso. ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+59.5 322.9 moveto 107 (Propaga RRES. ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+8 305.9 moveto 210 (Envia RREP com contagem de ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+56.5 288.9 moveto 113 (salto = c2\(<c1\).) alignedtext
+grestore
+% S->A
+gsave
+1 setlinewidth
+0.000 0.000 0.000 edgecolor
+newpath 219 462 moveto
+209 456 199 451 190 444 curveto
+179 436 169 426 160 416 curveto
+stroke
+0.000 0.000 0.000 edgecolor
+newpath 162.22 413.22 moveto
+153 408 lineto
+156.95 417.83 lineto
+closepath fill
+1 setlinewidth
+solid
+0.000 0.000 0.000 edgecolor
+newpath 162.22 413.22 moveto
+153 408 lineto
+156.95 417.83 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+14 /Times-Roman set_font
+190 430.9 moveto 40 (RREQ) alignedtext
+grestore
+% B
+gsave
+1 setlinewidth
+0.000 0.000 0.000 nodecolor
+newpath 578 399 moveto
+244 399 lineto
+244 289 lineto
+578 289 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+404 382.4 moveto 14 (B ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+326 365.4 moveto 170 (Verifica rota para destn. ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+252 348.4 moveto 318 (Rota encontrada com contagem de salto = c1 ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+365 331.4 moveto 92 (e número de ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+354 314.4 moveto 114 (sequência = s1. ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+367.5 297.4 moveto 87 (Envia RREQ.) alignedtext
+grestore
+% S->B
+gsave
+1 setlinewidth
+0.000 0.000 0.000 edgecolor
+newpath 371 462 moveto
+368 450 366 438 369 426 curveto
+370 420 372 414 375 408 curveto
+stroke
+0.000 0.000 0.000 edgecolor
+newpath 378.14 409.56 moveto
+379 399 lineto
+371.74 406.72 lineto
+closepath fill
+1 setlinewidth
+solid
+0.000 0.000 0.000 edgecolor
+newpath 378.14 409.56 moveto
+379 399 lineto
+371.74 406.72 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+14 /Times-Roman set_font
+369 430.9 moveto 40 (RREQ) alignedtext
+grestore
+% C
+gsave
+1 setlinewidth
+0.000 0.000 0.000 nodecolor
+newpath 796 407.5 moveto
+596 407.5 lineto
+596 280.5 lineto
+796 280.5 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+689 390.9 moveto 14 (C ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+611 373.9 moveto 170 (Verifica rota para destn. ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+628.5 356.9 moveto 135 (Não encontra rota. ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+603.5 339.9 moveto 185 (Define o caminho reverso. ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+605 322.9 moveto 182 (Propaga RREQ para D e E ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+619 305.9 moveto 154 (Recebe RREP do nó D ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+656 288.9 moveto 80 (Envia RREP) alignedtext
+grestore
+% S->C
+gsave
+1 setlinewidth
+0.000 0.000 0.000 edgecolor
+newpath 494 462 moveto
+524 445 557 425 587 408 curveto
+587 408 587 408 587 408 curveto
+stroke
+0.000 0.000 0.000 edgecolor
+newpath 588.96 410.92 moveto
+596 403 lineto
+585.56 404.8 lineto
+closepath fill
+1 setlinewidth
+solid
+0.000 0.000 0.000 edgecolor
+newpath 588.96 410.92 moveto
+596 403 lineto
+585.56 404.8 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+14 /Times-Roman set_font
+552 430.9 moveto 40 (RREQ) alignedtext
+grestore
+% A->S
+gsave
+1 setlinewidth
+0.000 0.000 0.000 edgecolor
+newpath 218 408 moveto
+245 423 273 441 299 457 curveto
+stroke
+0.000 0.000 0.000 edgecolor
+newpath 297.56 460.2 moveto
+308 462 lineto
+300.96 454.08 lineto
+closepath fill
+1 setlinewidth
+solid
+0.000 0.000 0.000 edgecolor
+newpath 297.56 460.2 moveto
+308 462 lineto
+300.96 454.08 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+14 /Times-Roman set_font
+274 430.9 moveto 38 (RREP) alignedtext
+grestore
+% B->S
+gsave
+1 setlinewidth
+0.000 0.000 0.000 edgecolor
+newpath 411 399 moveto
+411 414 410 429 409 444 curveto
+409 447 409 449 409 452 curveto
+stroke
+0.000 0.000 0.000 edgecolor
+newpath 405.53 451.51 moveto
+407 462 lineto
+412.39 452.88 lineto
+closepath fill
+1 setlinewidth
+solid
+0.000 0.000 0.000 edgecolor
+newpath 405.53 451.51 moveto
+407 462 lineto
+412.39 452.88 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+14 /Times-Roman set_font
+412 430.9 moveto 38 (RREP) alignedtext
+grestore
+% C->S
+gsave
+1 setlinewidth
+0.000 0.000 0.000 edgecolor
+newpath 641 408 moveto
+627 421 612 434 596 444 curveto
+589 448 581 453 573 457 curveto
+stroke
+0.000 0.000 0.000 edgecolor
+newpath 571.04 454.08 moveto
+564 462 lineto
+574.44 460.2 lineto
+closepath fill
+1 setlinewidth
+solid
+0.000 0.000 0.000 edgecolor
+newpath 571.04 454.08 moveto
+564 462 lineto
+574.44 460.2 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+14 /Times-Roman set_font
+619 430.9 moveto 38 (RREP) alignedtext
+grestore
+% D
+gsave
+1 setlinewidth
+0.000 0.000 0.000 nodecolor
+newpath 822 200 moveto
+444 200 lineto
+444 124 lineto
+822 124 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+625 183.4 moveto 16 (D ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+548 166.4 moveto 170 (Verifica rota para destn. ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+451.5 149.4 moveto 363 (Encontra rota com número de sequência = s2\(>s1\). ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+591.5 132.4 moveto 83 (Envia RREP.) alignedtext
+grestore
+% C->D
+gsave
+1 setlinewidth
+0.000 0.000 0.000 edgecolor
+newpath 642 280 moveto
+639 274 636 268 634 262 curveto
+628 245 627 227 628 210 curveto
+stroke
+0.000 0.000 0.000 edgecolor
+newpath 631.5 210 moveto
+628 200 lineto
+624.5 210 lineto
+closepath fill
+1 setlinewidth
+solid
+0.000 0.000 0.000 edgecolor
+newpath 631.5 210 moveto
+628 200 lineto
+624.5 210 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+14 /Times-Roman set_font
+637 248.9 moveto 40 (RREQ) alignedtext
+grestore
+% E
+gsave
+1 setlinewidth
+0.000 0.000 0.000 nodecolor
+newpath 1086 225.5 moveto
+840 225.5 lineto
+840 98.5 lineto
+1086 98.5 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+956 208.9 moveto 14 (E ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+878 191.9 moveto 170 (Verifica rota para destn. ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+895.5 174.9 moveto 135 (Não encontra rota. ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+870.5 157.9 moveto 185 (Define o caminho reverso. ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+870 140.9 moveto 186 (Propaga RREQ para F e G. ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+848 123.9 moveto 230 (Deleta o caminho reverso depois ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+893 106.9 moveto 140 (de expirar o tempo. ) alignedtext
+grestore
+% C->E
+gsave
+1 setlinewidth
+0.000 0.000 0.000 edgecolor
+newpath 789 280 moveto
+812 264 837 247 860 232 curveto
+stroke
+0.000 0.000 0.000 edgecolor
+newpath 862.62 234.46 moveto
+869 226 lineto
+858.74 228.63 lineto
+closepath fill
+1 setlinewidth
+solid
+0.000 0.000 0.000 edgecolor
+newpath 862.62 234.46 moveto
+869 226 lineto
+858.74 228.63 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+14 /Times-Roman set_font
+839 248.9 moveto 40 (RREQ) alignedtext
+grestore
+% D->C
+gsave
+1 setlinewidth
+0.000 0.000 0.000 edgecolor
+newpath 655 200 moveto
+662 214 669 229 674 244 curveto
+677 252 680 261 682 270 curveto
+stroke
+0.000 0.000 0.000 edgecolor
+newpath 678.77 271.43 moveto
+685 280 lineto
+685.48 269.42 lineto
+closepath fill
+1 setlinewidth
+solid
+0.000 0.000 0.000 edgecolor
+newpath 678.77 271.43 moveto
+685 280 lineto
+685.48 269.42 lineto
+closepath stroke
+0.000 0.000 0.000 edgecolor
+14 /Times-Roman set_font
+681 248.9 moveto 38 (RREP) alignedtext
+grestore
+% F
+gsave
+1 setlinewidth
+0.000 0.000 0.000 nodecolor
+newpath 954 59.5 moveto
+768 59.5 lineto
+768 .5 lineto
+954 .5 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+854.5 42.9 moveto 13 (F ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+776 25.9 moveto 170 (Verifica rota para destn. ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+795.5 8.9 moveto 131 (Não encontra rota.) alignedtext
+grestore
+% E->F
+gsave
+1 setlinewidth
+0.000 0.000 0.000 edgecolor
+newpath 914 98 moveto
+906 88 898 77 890 68 curveto
+stroke
+0.000 0.000 0.000 edgecolor
+newpath 892.8 65.9 moveto
+884 60 lineto
+887.2 70.1 lineto
+closepath fill
+1 setlinewidth
+solid
+0.000 0.000 0.000 edgecolor
+newpath 892.8 65.9 moveto
+884 60 lineto
+887.2 70.1 lineto
+closepath stroke
+grestore
+% G
+gsave
+1 setlinewidth
+0.000 0.000 0.000 nodecolor
+newpath 1158 59.5 moveto
+972 59.5 lineto
+972 .5 lineto
+1158 .5 lineto
+closepath stroke
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+1057 42.9 moveto 16 (G ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+980 25.9 moveto 170 (Verifica rota para destn. ) alignedtext
+0.000 0.000 0.000 nodecolor
+14 /Times-Roman set_font
+999.5 8.9 moveto 131 (Não encontra rota.) alignedtext
+grestore
+% E->G
+gsave
+1 setlinewidth
+0.000 0.000 0.000 edgecolor
+newpath 1012 98 moveto
+1020 88 1028 77 1036 68 curveto
+stroke
+0.000 0.000 0.000 edgecolor
+newpath 1038.8 70.1 moveto
+1042 60 lineto
+1033.2 65.9 lineto
+closepath fill
+1 setlinewidth
+solid
+0.000 0.000 0.000 edgecolor
+newpath 1038.8 70.1 moveto
+1042 60 lineto
+1033.2 65.9 lineto
+closepath stroke
+grestore
+endpage
+showpage
+grestore
+%%PageTrailer
+%%EndPage: 1
+%%Trailer
+end
+restore
+%%EOF

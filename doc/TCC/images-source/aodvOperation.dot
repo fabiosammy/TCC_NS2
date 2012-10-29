@@ -1,0 +1,32 @@
+digraph aodvOperation {
+
+	node[shape=box]
+	edge[len=5]
+	
+	S[label="Source (S) \nInicia a descoberta de rotas enviando RREQ para os nós A, B e C \nRecebe RREP dos nós A, B e C \nEscolhe o caminho por C, pois tem o maior número de sequência \nAtualiza as informações na tabela de rotas \nInicia a comunicação com o destino através do caminho escolhido."]
+	A[label="A \nVerifica rota para destn. \nNão encontra rota. \nDefine o caminho reverso. \nPropaga RRES. \nEnvia RREP com contagem de \nsalto = c2(<c1)."]
+	B[label="B \nVerifica rota para destn. \nRota encontrada com contagem de salto = c1 \ne número de \nsequência = s1. \nEnvia RREQ."]
+	C[label="C \nVerifica rota para destn. \nNão encontra rota. \nDefine o caminho reverso. \nPropaga RREQ para D e E \nRecebe RREP do nó D \nEnvia RREP"]
+	D[label="D \nVerifica rota para destn. \nEncontra rota com número de sequência = s2(>s1). \nEnvia RREP."]
+	E[label="E \nVerifica rota para destn. \nNão encontra rota. \nDefine o caminho reverso. \nPropaga RREQ para F e G. \nDeleta o caminho reverso depois \nde expirar o tempo. "]
+	F[label="F \nVerifica rota para destn. \nNão encontra rota."]
+	G[label="G \nVerifica rota para destn. \nNão encontra rota."]
+
+	S -> A[label="RREQ"]
+	A -> S[label="RREP"]
+
+	S -> B[label="RREQ"]
+	B -> S[label="RREP"]
+
+	S -> C[label="RREQ"]
+	C -> S[label="RREP"]
+
+	C -> D[label="RREQ"]
+	D -> C[label="RREP"]
+
+	C -> E[label="RREQ"]
+
+	E -> F
+	E -> G
+
+}
