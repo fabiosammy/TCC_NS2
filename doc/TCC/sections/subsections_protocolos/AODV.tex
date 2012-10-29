@@ -5,16 +5,37 @@ Entretando, o AODV utiliza a caracter\'istica do DSDV de obrigar todos os n\'os 
 Cada n\'o tem conhecimento do pr\'oximo salto para alcan\c{c}ar o destino e a dist\^ancia em n\'umero de saltos.
 Pode ser considerado como uma vers\~ao melhorada do DSDV, uma ver que seu funcionamento baseado em demanda minimiza o n\'umero de inunda\c{c}\~oes na rede exigido pelo DSDV para cria\c{c}\~ao de rotas.
 
-\subsubsection{Processo de cria\c{c}\~ao de rotas no AODV}
+\subsubsection{Processo de descoberta de rotas no AODV}
+Quando um n\'o necessita encontrar uma rota para outro n\'o, e esta rota n\~ao est\'a presente na sua tabela de rotas, inicia um procedimento de descoberta de rotas (figura \ref{figAodvRreq}), enviando pacotes \textit{Route Request} (RREQ) para todos os n\'os vizinhos, incluindo o \'ultimo n\'umero de sequ\^encia para aquele destino. 
+Os pacotes RREQ s\~ao propagados pela rede at\'e alcan\c{c}ar o n\'o destino ou um n\'o intermedi\'ario com uma rota recente para o destino.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=.5]{aodvRREQ.eps}
+	\caption{Descoberta de rotas (RREQ) usando o protocolo AODV \cite{pereira}}
+	\label{figAodvRreq}
+\end{figure}
+
+Durante o processo de encaminhamento do pacote RREQ, os n\'os intermedi\'arios gravam em suas tabelas de rotas o endere\c{c}o do vizinho que encaminhou o pacote. 
+Desta forma, estabelece um caminho reverso que ser\'a utilizado pelo pacote \textit{Route Reply} (RREP) para alcan\c{c}ar o n\'o de origem (figura \ref{figAodvRrep}), quando a rota para o destino for encontrada.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=.5]{aodvRREP.eps}
+	\caption{Propaga\c{c}\~ao do \textit{Route Reply} (RREP) no protocolo AODV \cite{pereira}}
+	\label{figAodvRrep}
+\end{figure}
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=.43]{aodvOperation.eps}
 	\caption{Processo de cria\c{c}\~ao de rotas no AODV \cite{gorantala}}
 	\label{figOpAODV}
 \end{figure}
+Acima a figura \ref{figOpAODV} \'e um exemplo de como o protocolo AODV encontra uma rota para um destino destn.
 Segue passo-a-passo a explica\c{c}\~ao do processo exibido na figura \ref{figOpAODV} acima.
 \begin{enumerate}
-	\item "Source S" Precisa enviar dados ao destino.
+	\item "Source S" precisa enviar dados ao destino destn.
 	\item "S" envia RREQ para seus vizinhos "A", "B" e "C".
 	\item "B" encontra o caminho em sua tabela de roteamento (com n\'umero de sequ\^encia = s1 e contagem de salto = c1) e envia RREP para "S".
 	\item "C" ativa caminho reverso.
@@ -22,7 +43,10 @@ Segue passo-a-passo a explica\c{c}\~ao do processo exibido na figura \ref{figOpA
 	\item "E" ativa caminho reverso.
 	\item "E" redireciona RREQ para seus vizinhos "F" e "G".
 	\item "E" deleta o caminho reverso ap\'os um per\'iodo de tempo limite, uma vez que n\~ao recebe qualquer RREPs dos n\'os "F" e "G".
-	\item "D" encontra o caminho () 
+	\item "D" encontra o caminho para destn (com n\'umero de sequ\^encia = s2, o qual \'e maior que s1 e contagem de salto c1) em sua tabela de roteamento e envia RREP para "C".
+	\item "C" recebe RREP de "D" e ativa o caminho de reencaminhamento e reencaminha RREP para "S".
+	\item "A" define o caminho reverso; redireciona RREQ para seus vizinhos; recebe RREP (com caminho de contagem de saltos c2, o qual \'e maior que c1); define o caminho de redirecionamento; e redireciona o RREP para "S".
+	\item "S" recebe uma inform\c{c}\~ao de caminho de "C" (o qual foi criado por "D"), dando prioridade ao caminho com o n\'umero de sequ\^encia maior e segunda prioridade com o caminho com a menor contagem de saltos. Apesar do caminho por "A" ter uma menor contagem de saltos, isso \'e ignorado, porque o n\'umero de sequ\^encia \'e maior para o caminho de "C".
 \end{enumerate}
 
 \subsubsection{Vantagens do AODV}

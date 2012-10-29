@@ -1,0 +1,13 @@
+digraph aodvRREP {
+	rankdir=LR;
+	edge [fontname=arial,fontsize=11]
+	node[color=black,shape=circle,size=8];
+	MH1[label="MH1 \nOrigem"]
+	MH8[label="MH8 \nDestino"]
+
+	MH1 -> MH2 -> MH5 -> MH8[dir="back",style=dotted];
+	MH1 -> MH4 -> MH6 -> MH7 -> MH8[dir=none];
+	MH1 -> MH3 -> MH6[dir=none];
+
+}
+
