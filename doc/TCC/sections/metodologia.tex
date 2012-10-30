@@ -2,12 +2,34 @@
 Neste trabalho, o objetivo das simula\c{c}\~oes \'e permitir uma an\'alise do comportamento de tr\^es protocolos de roteamento em redes \textit{ad hoc} (AODV, DSDV e OLSR), sob a influ\^encia de um cen\'ario que retrata uma aplica\c{c}\~ao militar, revelando os problemas decorrentes da utiliza\c{c}\~ao deste tipo de rede em um cen\'ario com essas caracter\'isticas, e buscando as melhores condi\c{c}\~oes para contornar estes problemas. Al\'em disso, por meio dsa simula\c{c}\~oes realizadas podemos avaliar o impacto que a mobilidade em grupo, a configura\c{c}\~ao de rede hier\'arquica e o movimento dos n\'os em uma dire\c{c}\~ao pr\'e-determinada podem causar no roteamento dos dados.
 
 \subsection{Ambiente de simula\c{c}\~ ao}
-Para o trabalho apresentado, os testes s\~ao baseados em simula\c{c}\~oes geradas pelo resultado de um projeto colaborativo entre a Universidade da Calif\'ornia do Sul e o laborat\'orio Xerox PARC, o simulador NS-2.
+Para o trabalho apresentado, os testes s\~ao baseados em um simulador criado de um projeto colaborativo entre a Universidade da Calif\'ornia do Sul e o laborat\'orio Xerox PARC, o simulador NS-2 \cite{FallVaradhan}.
 
 O NS-2 \'e um simulador de eventos discreto, oferecendo suporte \`a simula\c{c}\~ao de um grande n\'umero de topologias de redem duferentes cen\'arios baseados nos protocolos TCP e UDP, diversos escalonadores e pol\'iticas de fila, caracteriza\c{c}\~ao de tr\'afego com diversas distribui\c{c}\~oes estat\'isticas dentre outras finalidades.
 
+
 \subsection{Cen\'arios militares}
+Segundo \cite{pereira}, em um cen\'ario de opera\c{c}\~oes militares \'e indispens\'avel o uso de tecnologias de comunica\c{c}\~ao sem fio. 
+Principalmente das tecnologias que tenham capacidade de atuar de forma aut\^onoma e proporcionar qualidade de conex\~ao juntamente com o grau de dinamicidade na topologia da rede.
+A qualidade da rede de comuni\c{c}\~ao utilizada em uma opera\c{c}\~ao militar pode acarretar o sucesso ou fracasso 
+
 \subsubsection{Requisitos b\'asicos}
+Segundo \cite{salles}, v\'arios requisitos s\~ao necess\'arios para que uma rede \textit{ad hoc} possa funcionar efetivamente em um cen\'ario real militar, onde o autor enumera v\'arios princ\'ipios de emprego das comunica\c{c}\~oes militares no Ex\'ercito Brasileiro, que s\~ao:
+\begin{description}
+	\item[Tempo integral:] Operar 24 horas por dia, todos os dias.
+	\item[Rapidez:] Estabelecer contato em tempo \'util para surtir os efeitos desejados.
+	\item[Amplitude de desdobramento:] Estar operacional em todo o teatro de opera\c{c}\~oes.
+	\item[Integra\c{c}\~ao:] Operar junto com os sistemas dos escal\~oes superior e inferior.
+	\item[Flexibilidade:] Adequar-se rapidamente \`as mudan\c{c}as das opera\c{c}\~oes t\'aticas e das oraganiza\c{c}\~oes militares.
+	\item[Apoio em profundidade:] Apoio ao escal\~ao superior (mais recuado) para com os escal\~oes subordinados (mais avan\c{c}ado).
+	\item[Continuidade:] Retomar as comunica\c{c}\~oes e mant\^e-las a qualquer custo, mesmo que o escal\~ao considerado n\~ao seja o respons\'avel.
+	\item[Confiabilidade:] Estar sempre dispon\'ivel, estabelecendo caminhos alternativos para a transmiss\~ao das mensagens.
+	\item[Emprego centralizado:] Concentrar meios em centros e eixos de comunica\c{c}\~oes permitindo melhor aproveitamento dos mesmos.
+	\item[Apoio cerrado:] Encurtar as dist\^ancias sempre que poss\'ivel para facilitar as comunica\c{c}\~oes.
+	\item[Seguran\c{c}a:] Impedir ou pelo menos dificultar a obten\c{c}\~ao da informa\c{c}\~ao pelo inimigo.
+	\item[Prioridade:] Estabelecer comunica\c{c}\~ao e transmitir mensagens de acordo com a prioridade preestabelecida.
+\end{description}
+
+
 \subsubsection{Movimenta\c{c}\~ao}
 
 
