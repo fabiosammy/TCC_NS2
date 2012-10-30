@@ -1,0 +1,49 @@
+digraph olsrOperation {
+
+	node[shape=circle,color=black]
+	//Level 1
+	MH1 -> MH2
+	MH1 -> MH3
+	MH1 -> MH4
+
+	MH2[color=blue]
+	MH4[color=blue]
+	MH5[color=blue]
+	MH7[color=blue]
+	MH9[color=blue]
+
+	//Level 2
+	MH2 -> MH5
+	MH2 -> MH6
+	MH2 -> MH7
+
+	MH4 -> MH7
+	MH4 -> MH8
+	MH4 -> MH9
+
+	edge[dir=none]
+	MH3 -> MH6
+	MH3 -> MH7
+	MH3 -> MH8
+
+	MH5 -> MH10
+	MH5 -> MH11
+	MH5 -> MH12
+
+	MH6 -> MH11
+	MH6 -> MH12
+	MH6 -> MH13
+
+	MH7 -> MH12
+	MH7 -> MH13
+	MH7 -> MH14
+
+	MH8 -> MH13
+	MH8 -> MH14
+	MH8 -> MH15
+
+	MH9 -> MH14
+	MH9 -> MH15
+	MH9 -> MH16
+
+}

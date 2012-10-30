@@ -7,3 +7,8 @@ dot -Teps aodvOperation.dot -o ../images/aodvOperation.eps
 dot -Teps aodvRREQ.dot -o ../images/aodvRREQ.eps
 dot -Teps aodvRREP.dot -o ../images/aodvRREP.eps
 
+
+dot -Teps olsrOperationStep1.dot -o ../images/olsrOperationStep1.eps
+dot -Teps olsrOperationStep2.dot -o ../images/olsrOperationStep2.eps
+dot -Teps olsrOperationStep3.dot -o ../images/olsrOperationStep3.eps
+
