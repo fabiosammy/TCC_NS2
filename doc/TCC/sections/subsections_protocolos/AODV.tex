@@ -26,6 +26,8 @@ Desta forma, estabelece um caminho reverso que ser\'a utilizado pelo pacote \tex
 	\label{figAodvRrep}
 \end{figure}
 
+Em cada tabela de roteamento \'e mantido o conjunto de n\'os antecessores que utilizam esta entrada para rotear pacotes de dados. Ent\~ao, quando uma conex\~ao \'e interrompida, estes n\'os antecessores s\~ao notificados com pacotes \textit{Route Error} (RERR). Cada n\'o antecessor encaminha este pacote para sua lista de n\'os antecessores, permitindo assim que efetivamente seja propagada a informa\c{c}\~ao de conex\~ao falha.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=.43]{aodvOperation.eps}
