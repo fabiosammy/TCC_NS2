@@ -1,25 +1,29 @@
 \section{Introdu\c{c}\~ao} 
-Atualmente a maioria da popula\c{c}\~ao possui um dispositivo port\'atil com disponibilidade de conex\~ao em redes sem-fio e capaz de se comunicar com outros dispositivos. 
+Atualmente, a maioria da popula\c{c}\~ao possui um dispositivo port\'atil com disponibilidade de conex\~ao em redes sem-fio e capaz de se comunicar com outros dispositivos. 
 Com a populariza\c{c}\~ao destes dispositivos, \'e muito comum existirem in\'umeras redes sem-fio dispon\'iveis para conex\~ao abertamente, ou a possibilidade de se criar uma nova conforme necessidade.
 
-As redes sem-fio s\~ao chamadas de \textit{wireless}, elas provem comunica\c{c}\~ao, seja com uma pequena ou grande rede de comunica\c{c}\~ao. 
-Nesse tipo de comunica\c{c}\~ao existem duas divis\~oes, as redes infra-estruturadas e as redes \textit{ad hoc}. 
-As redes \textit{ad hoc} s\~ao consideradas MANET's(textit{Mobile ad hoc network}), pois n\~ao \'e necess\'ario uma estrutura fixa para que a comunica\c{c}\~ao funcione.
+As redes sem-fio (chamadas de \textit{wireless}), prov\^em comunica\c{c}\~ao, seja com uma pequena ou grande rede de comunica\c{c}\~ao. 
+Essas redes podem ser classificadas em:
+
+\begin{itemize}
+	\item Redes infra-estruturadas.
+	\item Redes \textit{ad hoc}.
+\end{itemize}
+
+Nas redes infra-estruturadas, toda a comuni\c{c}\~ao entre os n\'os m\'oveis \'e feita pelo meio de uma Esta\c{c}\~ao de Suporte \`a Mobilidade (ESM) na rede fixa.
+A ESM gera sinal oferecendo acesso aos \textit{hosts}, e os \textit{hosts} s\'o geram conex\~oes, aplica\c{c}\~oes dos usu\'arios. Quem gera as rotas, o roteador, \'e a ESM. 
+
+As redes \textit{ad hoc} s\~ao chamadas de MANET(\textit{Mobile ad hoc network}), pois n\~ao \'e necess\'ario uma estrutura fixa para que a comunica\c{c}\~ao funcione.
 No tipo de rede infra-estruturada, os n\'os m\'oveis, mesmo pr\'oximos um do outro, est\~ao impossibilitados de estabelecer comunica\c{c}\~ao direta entre si \cite{pereira}.
 
-As redes-infraestruturadas s\~ao compostas por uma Esta\c{c}\~ao de Suporte a Mobilidade (ESM), que gera o sinal, oferecendo acesso aos \textit{hosts}. 
-Os \textit{hosts} s\'o geram conex\~oes, aplica\c{c}\~oes dos usu\'arios, e quem gera as rotas, o roteador, \'e o ESM. 
-Por\'em as MANETs n\~ao t\^em o ESM, mas tem uma dinamicidade grande em sua forma de comunica\c{c}\~ao, pois a cada novo n\'o na rede, ele dever\'a atuar como um roteador e como um \textit{host}, executando aplica\c{c}\~oes dos usu\'arios. 
-Para as redes \textit{ad hoc}, existem poucos protocolos oficiais de roteamento da rede, pois \'e um grande desafio o roteamento nesse tipo de rede pela forma din\^ amica de como a topologia da rede \'e desenvolvida.
+As MANETs n\~ao possuem a ESM, elas t\^em uma dinamicidade grande em sua forma de comunica\c{c}\~ao, pois cada novo n\'o na rede, atuar\'a como um roteador e como um \textit{host}, executando aplica\c{c}\~oes dos usu\'arios. 
+Existem poucos protocolos oficiais de roteamento para as redes \textit{ad hoc}, pois  o roteamento nesse tipo de rede \'e um grande desafio devido a forma din\^ amica de como a topologia da rede \'e desenvolvida.
 
-\begin{quote}
-"As MANETs proporcionam a exist\^encia de estruturas de comunica\c{c}\~ao em ambientes, por exemplo, com muitos obst\'aculos \`a cria\c{c}\~ao de uma estrutura fixa. 
-Um cen\'ario de opera\c{c}\~ao militar pode ser visto como uma situa\c{c}\~ao em que as MANETs s\~ao requiridas para proporcionar a comunica\c{c}\~ao em um ambiente hostil e geograficamente acidentado, n\~ao possibilitando a exist\^encia de uma estrutura fixa"\cite{schimidt}.
-\end{quote}
+Os autores \cite{pepe} comentam sobre a dinamicidade das redes \textit{ad hoc} e a facilidade em criar uma rede dessas.
+As MANETs proporcionam estruturas de comunica\c{c}\~ao em ambientes com obst\'aculos \`a cria\c{c}\~ao de uma estrutura fixa.
+Um cen\'ario de opera\c{c}\~ao militar pode ser visto como uma situa\c{c}\~ao em que as MANETs s\~ao requiridas para viabilizar a comunica\c{c}\~ao em um ambiente hostil e geograficamente acidentado, n\~ao possibilitando a exist\^encia de uma estrutura fixa \cite{schimidt}.
 
-Os autores \cite{pepe} comentam sobre a dinamicidade das redes \textit{ad hoc} e a facilidade em criar uma rede nesse tipo, um cen\'ario militar \'e uma \'otima aplica\c{c}\~ao desse tipo de rede, pois tal cen\'ario \'e um ambiente hostil e geograficamente acidentado, n\~ao possibilitando a exist\^encia de uma estrutura fixa \cite{schimidt}.
+Segundo \cite{salles}, a necessidade de uma comunica\c{c}\~ao r\'apida em uma equipe militar \'e essencial para obte\c{c}\~ao de sucesso em operac\~oes, pois qualquer atraso na comunicac\~ao pode desencadear um final catastr\'ofico na execuc\~ao da opera\c{c}\~ao. 
+Os diversos protocolos existentes das redes \textit{ad hoc} diferenciam-se em: n\'umero de pacotes de requisic\~oes a transitar na rede, modo de atualizac\~ao das rotas, sistema de armazenamento de rotas, e outros. Portanto a escolha do protocolo de roteamento pode influenciar no desempenho final da rede.
 
-Segundo \cite{salles}, a necessidade de uma comunica\c{c}\~ao r\'apida para a equipe militar \'e essencial para obter um sucesso em sua operac\~ao, pois qualquer atraso na comunicac\~ao pode influenciar em um final catastr\'ofico na execuc\~ao de um passo na operac\~ao. 
-Os diversos protocolos existentes das redes \textit{ad hoc} diferenciam-se em n\'umero de pacotes de requisic\~oes a transitar na rede, modo de atualizac\~ao das rotas, sistema de armazenamento de rotas, e outros. o que influencia na performance final da rede.
-
-O objetivo deste artigo \'e apresentar um estudo de diferentes protocolos de roteamento em redes ad hoc em cen\'arios militares, atrav\'es de m\'etricas de performance baseados em estudos realizados por \cite{pereira} e \cite{salles}.
+O objetivo deste artigo \'e apresentar um estudo de diferentes protocolos de roteamento em redes \textit{ad hoc} em cen\'arios militares, atrav\'es de m\'etricas de performance baseados em estudos realizados por \cite{pereira} e \cite{salles}.

@@ -23,10 +23,10 @@ O objetivo principal deste experimento \'e poder analizar o tempo de converg\^en
 	\label{tabParamExp1}
 \end{table}
 
-A figura \ref{figExp1} demonstra o experimento realizado, onde cada Soldado(n\'o) N deve atingir seu Destino N.
-Cada Soldado inicia seu movimento a um tempo determinado na simula\c{c}\~ao, onde na figura \ref{figExp1} \'e referenciado pelo prefixo \textit{at}, o qual \'e defido em segundos, e abaixo exibe o movimento de cada Soldado, onde nesse experimento todos os Soldados possuem um movimento constante de 1,5 metros por segundo. 
+A Figura \ref{figExp1} demonstra o experimento realizado, onde cada Soldado(n\'o) deve atingir seu respectivo Destino.
+Cada Soldado inicia seu movimento a um tempo determinado na simula\c{c}\~ao, onde na Figura \ref{figExp1} \'e referenciado pelo prefixo \textit{at}, o qual \'e defido em segundos, e abaixo exibe o movimento de cada Soldado, onde nesse experimento todos os Soldados possuem um movimento constante de 1,5 metros por segundo. 
 
-A fonte de tr\'afego nesse experimento \'e somente de uma, a qual realiza uma conex\~ao do Soldado 3(fonte) ao Soldado 1(destino), onde inicialmente vai passar pelo Soldado 2 essa comunica\c{c}\~ao, pois os Soldados 1 e 3 n\~ao est\~ao pr\'oximos a fim de criarem uma rota direta.
+A fonte de tr\'afego nesse experimento \'e somente de uma, a qual realiza uma conex\~ao do Soldado 3(fonte) ao Soldado 1(destino). Inicialmente vai passar pelo Soldado 2 essa comunica\c{c}\~ao, pois os Soldados 1 e 3 n\~ao est\~ao pr\'oximos a fim de criarem uma rota direta.
 
 \begin{figure}[H]
 	\centering
@@ -55,12 +55,12 @@ Ele consiste em analizar o fuxo da rede passante.
 \subsection{M\'etricas de desempenho}
 Com base nos estudo de \cite{pereira} e \cite{schimidt} e informa\c{c}\~oes obtidas por \cite{salles}, foram definidas m\'etricas para analizar o comportamento de cada protocolo e poder tamb\'em comparar resultados obtidos em estudos anteriores j\'a realizados pelos 2 primeiros autores citados.
 
-\begin{description}
-	\item[Taxa de entrega de pacotes:] Raz\~ao entre o n\'umero de pacotes entregues para o destino final e o n\'umero de pacotes gerados pela aplica\c{c}\~ao na fonte.
-	\item[Atraso m\'edio fim a fim dos pacotes de dados:] Inclui todos os poss\'iveis atrasos causados pela lat\^encia da descoberta de rotas, propaga\c{c}\~ao, atrasos devido a retransmiss\~oes da camada MAC e tempos de transfer\^encia.
-	\item[N\'umero de pacotes de roteamento:] S\~ao medidos a quantidade total de pacotes de roteamento, representada pelos pacotes de descoberta e manuten\c{c}\~ao das rotas enviados pela origem ou encaminhados pelos n\'os intermedi\'arios. No protocolo por demanda (AODV), esses pacotes s\~ao representados pelos pacotes RREQ, RREP e RERR. No DSDV e OLSR, esses pacotes s\~ao representados pelas tabelas de roteamento que s\~ao trocadas periodicamente.
-	\item[N\'umero de \textit{bytes} de roteamento:] S\~ao medidos a quantidade total de \textit{bytes} em cada pacote de, incluindo a quantidade de \textit{bytes} de cabe\c{c}alho em pacotes de dados, que corresponde, normalmente, ao roteamento na fonte.
-\end{description}
+\begin{itemize}
+	\item \textbf{Taxa de entrega de pacotes:} Raz\~ao entre o n\'umero de pacotes entregues para o destino final e o n\'umero de pacotes gerados pela aplica\c{c}\~ao na fonte.
+	\item \textbf{Atraso m\'edio fim a fim dos pacotes de dados:} Inclui todos os poss\'iveis atrasos causados pela lat\^encia da descoberta de rotas, propaga\c{c}\~ao, atrasos devido a retransmiss\~oes da camada MAC e tempos de transfer\^encia.
+	\item \textbf{N\'umero de pacotes de roteamento:} \'E medido a quantidade total de pacotes de roteamento, representada pelos pacotes de descoberta e manuten\c{c}\~ao das rotas enviados pela origem ou encaminhados pelos n\'os intermedi\'arios. No protocolo por demanda (AODV), esses pacotes s\~ao representados pelos pacotes RREQ, RREP e RERR. No DSDV e OLSR, esses pacotes s\~ao representados pelas tabelas de roteamento que s\~ao trocadas periodicamente.
+	\item \textbf{N\'umero de \textit{bytes} de roteamento:} \'E medido a quantidade total de \textit{bytes} em cada pacote de, incluindo a quantidade de \textit{bytes} de cabe\c{c}alho em pacotes de dados, que corresponde, normalmente, ao roteamento na fonte.
+\end{itemize}
 Segundo \cite{pereira}, o tr\'afego referente ao roteamento deve ser o menor poss\'ivel quando comparado ao tr\'afego de dados, pois para se enviar pacotes de roteamento gasta-se energia dos n\'os e consome-se banda, que s\~ao recursos escassos em redes sem fio. 
 Para as redes militares, a taxa de entrega e o atraso s\~ao as m\'etricas mais importantes.
 

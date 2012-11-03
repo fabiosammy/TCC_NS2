@@ -20,8 +20,8 @@ Neste contexto, o uso de n\'umeros de sequ\^encia faz com que o DSDV se adapte m
 	\label{figOpDSDV}
 \end{figure}
 
-Considerando a figura \ref{figOpDSDV}, possu\'imos 8 hosts em nossa rede. 
-N\'os podemos analizar a mudan\c{c}a de roteamento da tabela do MH4 em rela\c{c}\~ao ao movimento do \textit{host} MH1(textit{Mobile Host 1}). 
+A Figura \ref{figOpDSDV}, descreve uma rede com 8 hosts. 
+Podemos analizar a mudan\c{c}a de roteamento da tabela do MH4 em rela\c{c}\~ao ao movimento do \textit{host} MH1(textit{Mobile Host 1}). 
 Inicialmente, todos os n\'os anunciam suas informa\c{c}\~oes de roteamento para todos os outros n\'os da rede e, portanto, onde a tabela de roteamento do \textit{host} MH4 inicialmente apresenta o seguinte conte\'udo conforme a tabela \ref{tabRtMH4}.
 
 \begin{table}[H]
@@ -42,9 +42,9 @@ Inicialmente, todos os n\'os anunciam suas informa\c{c}\~oes de roteamento para 
 	\label{tabRtMH4}
 \end{table}
 
-Por\'em, quando o \textit{host} MH1 move sua localiza\c{c}\~ao para pr\'oximo dos \textit{hosts} MH7 e MH8 como apresentado na figura \ref{figOpDSDV} ent\~ao, o enlace entre MH2 e MH1 vai ser quebrada, resultando em atribui\c{c}\~ao de uma m\'etrica infinita de MH2 para MH1 e o n\'umero de sequ\^encia ser\'a alterado para um n\'umero \'impar na tabela de roteamento em MH2. 
+Por\'em, quando o \textit{host} MH1 move sua localiza\c{c}\~ao para pr\'oximo dos \textit{hosts} MH7 e MH8 como apresentado na Figura \ref{figOpDSDV} ent\~ao, o enlace entre MH2 e MH1 vai ser quebrado, resultando em atribui\c{c}\~ao de uma m\'etrica infinita de MH2 para MH1 e o n\'umero de sequ\^encia ser\'a alterado para um n\'umero \'impar na tabela de roteamento em MH2. 
 MH2 atualizar\'a essa informa\c{c}\~ao para os \textit{hosts} vizinhos. 
-Desde que haja um novo \textit{host} vizinho para MH7 e MH8, eles v\~ao atualizar essa informa\c{c}\~ao nas respectivas tabelas de roteamento e propagam essa nova informa\c{c}\~ao. 
+Desde que haja um novo \textit{host} vizinho para MH7 e MH8, eles v\~ao atualizar essa informa\c{c}\~ao nas respectivas tabelas de roteamento e propagar essa nova informa\c{c}\~ao. 
 Agora, MH4 receber\'a esta atualiza\c{c}\~ao de informa\c{c}\~ao de MH6, onde MH6 recebe 2 pacotes de informa\c{c}\~oes de diferentes vizinhos para chegar em MH1 com o mesmo n\'umero de sequ\^encia, mas com diferentes m\'etricas. 
 A sele\c{c}\~ao da rota ir\'a depender da menor contagem de saltos quando o n\'umero de sequ\^encia \'e o mesmo. 
 Agora a tabela de roteamento do MH4 estar\'a com o conte\'udo demonstrado na tabela  \ref{tabNewRtMH4}.
