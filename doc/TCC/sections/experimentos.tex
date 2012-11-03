@@ -2,12 +2,11 @@
 \subsection{Experimentos}
 A fim de poder entender o funcionamento do simulador NS-2 e tamb\'em estudar simula\c{c}\~oes de comunica\c{c}\~ao em cen\'arios militares, foram definidos 2 experimentos te\'oricos, sendo o Experimento 1, um teste simples de converg\^encia de rotas, e o Experimento 2, baseado em estudos realizados por \cite{pereira}, o qual representa um caso de assalto e tomada de posi\c{c}\~ao inimiga.
 
-Cada experimento possui suas caracter\'isticas, mas exitem uma semalhan\c{c}a base, que \'e o tr\'afego que ir\'a caminhar pela rede, sendo ele baseado em \textit{VOIP}, a fim de simular uma comuni\c{c}\~ao de voz.
-Esse tipo de tr\'afego possui uma caracter\'istica
+Cada experimento possui suas caracter\'isticas, mas exitem uma semalhan\c{c}a base, que \'e o tr\'afego que ir\'a caminhar pela rede, como ja comentado na se\c{c}\~ao \ref{trafegoDados}, o qual foi escolhido o CBR.
 
-\subsubsection{Experimento 1}\label{SecExp1}
-O experimento 1 baseia-se na id\'eia simples de um protocolo de rede \textit{ad hoc}, roteamento din\^amico.
-O objetivo principal deste experimento \'e poder analizar o tempo de converg\^encia de roteamento de uma origem a um destino, alterando 1 vez o caminho pelo qual eles realizam a comunica\c{c}\~ao.
+\subsubsection{Experimento 1}
+O experimento 1 baseia-se na ideia simples de um protocolo de rede \textit{ad hoc}, roteamento din\^amico.
+O objetivo principal deste experimento \'e poder analizar o tempo de converg\^encia de roteamento de uma origem a um destino, alterando uma vez o caminho pelo qual eles realizam a comunica\c{c}\~ao.
 
 \begin{table}[H]
 	\centering
@@ -24,8 +23,8 @@ O objetivo principal deste experimento \'e poder analizar o tempo de converg\^en
 	\label{tabParamExp1}
 \end{table}
 
-A figura \ref{figExp1} demonstra o experimento realizando, onde cada Soldado(n\'o) N deve atingir seu Destino N.
-Cada Soldado inicia seu movimento a um tempo determinado na simula\c{c}\~ao, onde na figura \ref{figExp1} \'e refer\^enciado pelo prefixo \textit{at}, o qual \'e defido em segundos, e abaixo exibe o movimento de cada Soldado, onde nesse experimento todos os Soldados possuem um movimento constante de 1,5 metros por segundo. 
+A figura \ref{figExp1} demonstra o experimento realizado, onde cada Soldado(n\'o) N deve atingir seu Destino N.
+Cada Soldado inicia seu movimento a um tempo determinado na simula\c{c}\~ao, onde na figura \ref{figExp1} \'e referenciado pelo prefixo \textit{at}, o qual \'e defido em segundos, e abaixo exibe o movimento de cada Soldado, onde nesse experimento todos os Soldados possuem um movimento constante de 1,5 metros por segundo. 
 
 A fonte de tr\'afego nesse experimento \'e somente de uma, a qual realiza uma conex\~ao do Soldado 3(fonte) ao Soldado 1(destino), onde inicialmente vai passar pelo Soldado 2 essa comunica\c{c}\~ao, pois os Soldados 1 e 3 n\~ao est\~ao pr\'oximos a fim de criarem uma rota direta.
 

@@ -20,9 +20,9 @@ Neste contexto, o uso de n\'umeros de sequ\^encia faz com que o DSDV se adapte m
 	\label{figOpDSDV}
 \end{figure}
 
-Considerando a figura \ref{figOpDSDV} acima, possu\'imos 8 hosts em nossa rede. 
-N\'os podemos analizar a mudan\c{c}a de roteamento da tabela do MH4 em rela\c{c}\~ao ao movimento do \textit{host} MH1. 
-Inicialmente, todos os n\'os anunciam suas informa\c{c}\~oes de roteamento para todos os outros n\'os da rede e, portanto, onde a tabela de roteamento do \textit{host} MH4 inicialmente apresenta o seguinte conte\'udo.
+Considerando a figura \ref{figOpDSDV}, possu\'imos 8 hosts em nossa rede. 
+N\'os podemos analizar a mudan\c{c}a de roteamento da tabela do MH4 em rela\c{c}\~ao ao movimento do \textit{host} MH1(textit{Mobile Host 1}). 
+Inicialmente, todos os n\'os anunciam suas informa\c{c}\~oes de roteamento para todos os outros n\'os da rede e, portanto, onde a tabela de roteamento do \textit{host} MH4 inicialmente apresenta o seguinte conte\'udo conforme a tabela \ref{tabRtMH4}.
 
 \begin{table}[H]
 	\centering
@@ -42,32 +42,12 @@ Inicialmente, todos os n\'os anunciam suas informa\c{c}\~oes de roteamento para 
 	\label{tabRtMH4}
 \end{table}
 
-E a tabela de redirecionamento do \textit{host} MH4 esta apresentado da seguinte forma.
-
-\begin{table}[H]
-	\centering
-	\caption{Tabela de redirecionamento do \textit{host} MH4 \cite{pebha} }
-	\begin{tabular}{ | l | l | l | }
-		\hline
-		Destino & M\'etrica & N\'umero de sequ\^encia \\ \hline
-		MH1 & 2 & S406\_MH1 \\ \hline
-		MH2 & 1 & S128\_MH2 \\ \hline
-		MH3 & 2 & S564\_MH3 \\ \hline
-		MH4 & 0 & S710\_MH4 \\ \hline
-		MH5 & 2 & S392\_MH5 \\ \hline
-		MH6 & 1 & S076\_MH6 \\ \hline
-		MH7 & 2 & S128\_MH7 \\ \hline
-		MH8 & 3 & S050\_MH8 \\ \hline
-	\end{tabular}
-	\label{tabRdMH4}
-\end{table} 
-
 Por\'em, quando o \textit{host} MH1 move sua localiza\c{c}\~ao para pr\'oximo dos \textit{hosts} MH7 e MH8 como apresentado na figura \ref{figOpDSDV} ent\~ao, o enlace entre MH2 e MH1 vai ser quebrada, resultando em atribui\c{c}\~ao de uma m\'etrica infinita de MH2 para MH1 e o n\'umero de sequ\^encia ser\'a alterado para um n\'umero \'impar na tabela de roteamento em MH2. 
 MH2 atualizar\'a essa informa\c{c}\~ao para os \textit{hosts} vizinhos. 
 Desde que haja um novo \textit{host} vizinho para MH7 e MH8, eles v\~ao atualizar essa informa\c{c}\~ao nas respectivas tabelas de roteamento e propagam essa nova informa\c{c}\~ao. 
 Agora, MH4 receber\'a esta atualiza\c{c}\~ao de informa\c{c}\~ao de MH6, onde MH6 recebe 2 pacotes de informa\c{c}\~oes de diferentes vizinhos para chegar em MH1 com o mesmo n\'umero de sequ\^encia, mas com diferentes m\'etricas. 
 A sele\c{c}\~ao da rota ir\'a depender da menor contagem de saltos quando o n\'umero de sequ\^encia \'e o mesmo. 
-Agora a tabela de roteamento do MH4 estar\'a dessa maneira.
+Agora a tabela de roteamento do MH4 estar\'a com o conte\'udo demonstrado na tabela  \ref{tabNewRtMH4}.
 
 \begin{table}[H]
 	\centering
@@ -87,26 +67,6 @@ Agora a tabela de roteamento do MH4 estar\'a dessa maneira.
 	\label{tabNewRtMH4}
 \end{table}
 
-E a tabela de roteamento estar\'a nessa maneira.
-
-\begin{table}[H]
-	\centering
-	\caption{Tabela de redirecionamento do \textit{host} MH4 apos o movimento do \textit{host} MH1 \cite{pebha} }
-	\begin{tabular}{ | l | l | l | }
-		\hline
-		Destino & M\'etrica & N\'umero de sequ\^encia \\ \hline
-		MH1 & 3 & S516\_MH1 \\ \hline
-		MH2 & 1 & S238\_MH2 \\ \hline
-		MH3 & 2 & S674\_MH3 \\ \hline
-		MH4 & 0 & S820\_MH4 \\ \hline
-		MH5 & 2 & S502\_MH5 \\ \hline
-		MH6 & 1 & S186\_MH6 \\ \hline
-		MH7 & 2 & S238\_MH7 \\ \hline
-		MH8 & 3 & S160\_MH8 \\ \hline
-	\end{tabular}
-	\label{tabNewRdMH4}
-\end{table}
-
 \subsubsection{Vantagens do DSDV}
 \begin{itemize}
 	\item Livre de \textit{loops} \cite{gorantala}.
@@ -119,6 +79,6 @@ E a tabela de roteamento estar\'a nessa maneira.
 \begin{itemize}
 	\item Desperd\'icio do uso da banda na rede devido a propaga\c{c}\~ao desnecess\'aria de informa\c{c}\~oes de roteamento, mesmo se n\~ao houver mudan\c{c}as na topologia da rede \cite{Patel00energyin}.	
 	\item O DSDV n\~ao suporta multiplos caminhos de rotas \cite{gorantala}.
-	\item \'E dif\'icil determinar um tempo de atraso para a propaga\c{c}\~ao das rotas \cite{heg}.
-	\item \'E dif\'icil manter a propaga\c{c}\~ao das tabelas de rotas para uma grande rede. Cada \textit{host} na rede deve manter uma tabela de rotas para propaga\c{c}\~ao. Mas para uma grande rede, isso causaria \textit{overhead}, o qual consome uma maior banda na rede \cite{gorantala}.
+	\item \'E dif\'icil determinar um tempo de converg\^encia para a propaga\c{c}\~ao das rotas \cite{heg}.
+	\item \'E dif\'icil manter a propaga\c{c}\~ao das tabelas de rotas para uma grande rede. Cada \textit{host} na rede deve manter uma tabela de rotas para propaga\c{c}\~ao. Mas para uma grande rede, isso causaria \textit{overhead} de rede, o qual consome uma maior banda na rede \cite{gorantala}.
 \end{itemize}

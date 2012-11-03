@@ -1,5 +1,5 @@
 \section{Metodologia dos testes} 
-Neste trabalho, o objetivo das simula\c{c}\~oes \'e permitir uma an\'alise do comportamento de tr\^es protocolos de roteamento em redes \textit{ad hoc} (AODV, DSDV e OLSR), sob a influ\^encia de um cen\'ario que retrata uma aplica\c{c}\~ao militar, revelando os problemas decorrentes da utiliza\c{c}\~ao deste tipo de rede em um cen\'ario com essas caracter\'isticas, e buscando as melhores condi\c{c}\~oes para contornar estes problemas. 
+Neste trabalho, o objetivo das simula\c{c}\~oes \'e permitir uma an\'alise do comportamento de tr\^es protocolos de roteamento em redes \textit{ad hoc} (AODV, DSDV e OLSR), sob a influ\^encia de dois cen\'arios que retratam uma aplica\c{c}\~ao militar, revelando os problemas decorrentes da utiliza\c{c}\~ao deste tipo de rede em um cen\'ario com essas caracter\'isticas, e buscando as melhores condi\c{c}\~oes para contornar estes problemas. 
 Al\'em disso, por meio das simula\c{c}\~oes realizadas podemos avaliar o impacto que a mobilidade em grupo, a configura\c{c}\~ao de rede hier\'arquica e o movimento dos n\'os em uma dire\c{c}\~ao pr\'e-determinada podem causar no roteamento dos dados.
 
 \subsection{Ambiente de simula\c{c}\~ ao}
@@ -49,7 +49,7 @@ Esses mesmos princ\'ipios foram mapeados pelos autores \cite{salles} em outros c
 
 \subsubsection{Movimenta\c{c}\~ao}
 
-\subsection{Tr\'afego de dados}
+\subsection{Tr\'afego de dados}\label{trafegoDados}
 Para obter uma compara\c{c}\~ao justa entre todos os protocolos, \'e necess\'ario selecionar um agente que n\~ao crie condi\c{c}\~oes de desigualdade, como mecanismos pr\'oprios de controle de congestionamento.
 O simulador utilizado, NS-2, oferece a possibilidade de gerar conex\~oes de tr\'afego TCP(\textit{Transport Control Protocol}) ou CBR(\textit{Constant Bit Rate}).
 O documento \cite{rfc793} define que o TCP possui um mecanismo pr\'oprio de controle de congestionamento, e tamb\'em os pacotes de reconhecimento (ACK) do agente disputam o canal, podendo causar colis\~oes e degradar o desempenho.
