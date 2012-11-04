@@ -1,0 +1,75 @@
+[global]
+area = rect(1000,1000)
+start_time = 0
+stop_time = 600
+
+[tank1]
+num_nodes = 1
+member_area = rect (150, 150)
+member_model = Waypoint
+member_model.T_min = 0
+member_model.T_max = 5
+member_model.V_min = 0
+member_model.V_max = 2
+center_model = MixWP
+center_model.wp1 = (0,0,20,0)
+center_model.wp2 = (200,500,13,30)
+center_model.wp3 = (400,400,14,200)
+center_model.wp4 = (600,350,15,200)
+
+[team1]
+num_nodes = 4 
+member_area = rect (50, 50)
+member_model = Waypoint
+member_model.T_min = 0
+member_model.T_max = 5
+member_model.V_min = 0
+member_model.V_max = 2
+center_model = MixWP
+center_model.wp1 = (0,400,20,0)
+center_model.wp2 = (200,500,6,30)
+center_model.wp3 = (400,400,6,200)
+center_model.wp4 = (600,350,6,200)
+
+[team2]
+num_nodes = 4 
+member_area = rect (50, 50)
+member_model = Waypoint
+member_model.T_min = 0
+member_model.T_max = 5
+member_model.V_min = 0
+member_model.V_max = 2
+center_model = MixWP
+center_model.wp1 = (0,200,20,0)
+center_model.wp2 = (200,100,6,30)
+center_model.wp3 = (400,200,6,200)
+center_model.wp4 = (600,350,6,200)
+
+[team3]
+num_nodes = 4 
+member_area = rect (50, 50)
+member_model = Waypoint
+member_model.T_min = 0
+member_model.T_max = 5
+member_model.V_min = 0
+member_model.V_max = 2
+center_model = MixWP
+center_model.wp1 = (200,0,20,0)
+center_model.wp2 = (350,100,6,30)
+center_model.wp3 = (500,200,6,200)
+center_model.wp4 = (600,350,6,200)
+
+[team4]
+num_nodes = 4 
+member_area = rect (50, 50)
+member_model = Waypoint
+member_model.T_min = 0
+member_model.T_max = 5
+member_model.V_min = 0
+member_model.V_max = 2
+center_model = MixWP
+center_model.wp1 = (400,0,20,0)
+center_model.wp2 = (350,100,6,30)
+center_model.wp3 = (500,200,6,200)
+center_model.wp4 = (600,350,6,200)
+

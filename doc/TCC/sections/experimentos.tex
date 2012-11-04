@@ -66,22 +66,53 @@ Para as redes militares, a taxa de entrega e o atraso s\~ao as m\'etricas mais i
 
 \subsection{An\'alise comparativa dos resultados}
 
+\subsubsection{Experimento 1}
+
 \begin{figure}[H]
 	\centering
-	\subfigure[Quantidade de pacotes perdidos]{
-		\includegraphics[scale=0.5]{lost.eps}
+	\subfigure[Taxa de entrega de pacotes]{
+		\includegraphics[scale=0.55]{lost.eps}
 	}\label{subfig:exp1Lost}
 	\subfigure[Atraso m\'edio (s)]{
-		\includegraphics[scale=0.5]{aodvLate.eps}
+		\includegraphics[scale=0.55]{delay.eps}
 	}\label{subfig:exp1Late}
-	\subfigure[Quantidade de \textit{bytes} de roteamento]{
-		\includegraphics[scale=0.5]{byte.eps}
+	\subfigure[N\'umero de \textit{bytes} de roteamento]{
+		\includegraphics[scale=0.55]{byte.eps}
 	}\label{subfig:exp1Byte}
-	\subfigure[Quantidade de pacotes de roteamento]{
-		\includegraphics[scale=0.5]{pkts.eps}
+	\subfigure[N\'umero de pacotes de roteamento]{
+		\includegraphics[scale=0.55]{pkts.eps}
 	}\label{subfig:exp1Pkts}
 	
 	\caption{Resultados para o experimento 1}
 	\label{fig:resulExp1}
 \end{figure}
 
+\begin{table}[H]
+	\centering
+	\caption{Resultado das simula\c{c}\~oes do experimento 1}
+	\begin{tabular}{ | l | l | l | l | }
+		\hline
+		M\'ETRICAS AVALIADAS & DSDV & AODV & OLSR \\ \hline
+		Taxa de entrega & 92.36\% & 99.66\% & 98.63\% \\ \hline
+		Atraso m\'edio (s) & 10.75.75 & 11.4837 & 11.3047 \\ \hline
+		N\'umero de pacotes & 543 & 588 & 565 \\ \hline
+		N\'umero de \textit{bytes} & 288896 & 312816 & 300580 \\ \hline
+	\end{tabular}
+	\label{tabExp1Result}
+\end{table}
+
+\subsubsection{Experimento 2}
+
+\begin{table}[H]
+	\centering
+	\caption{Resultado das simula\c{c}\~oes do experimento 2}
+	\begin{tabular}{ | l | l | l | l | }
+		\hline
+		M\'ETRICAS AVALIADAS & DSDV & AODV & OLSR \\ \hline
+		Taxa de entrega & XXX & XXX & XXX  \\ \hline
+		Atraso m\'edio & XXX & XXX & XXX  \\ \hline
+		N\'umero de pacotes & XXX & XXX & XXX  \\ \hline
+		N\'umero de \textit{bytes} & XXX & XXX & XXX  \\ \hline
+	\end{tabular}
+	\label{tabExp2Result}
+\end{table}

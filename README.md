@@ -12,11 +12,9 @@ Orientadores:
 
 Estrutura do repositório
 ========================
-* ./docs/*       - documento do TCC (Não disponível)
+* ./docs/*       - documento do TCC 
 * ./OSDV/*       - Simulações com o protocolo OSDV
 * ./AODV/*       - Simulações com o protocolo AODV
 * ./OLSR/*       - Simulações com o protocolo OLSR
-* ./simple/*     - Simulações de exemplo
 * ./links.txt    - Links de vários materiais 
-* ./Variaveis.sh - Script shell que lê os arquivos de log e registra algumas variáveis de análise
 
