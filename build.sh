@@ -1,14 +1,14 @@
 #!/bin/bash
 
-echo -n "AODV - Executando experimento 1... "
-cd AODV/experimento1
+echo -n "DSDV - Executando experimento 1... "
+cd DSDV/experimento1
 ns experimento1.tcl >/dev/null 2>&1
 RETVAL=$?
 cd ../../
 [ "$RETVAL" = "0" ] && echo "[DONE]" || echo "[FAIL]"
 
-echo -n "DSDV - Executando experimento 1... "
-cd DSDV/experimento1
+echo -n "AODV - Executando experimento 1... "
+cd AODV/experimento1
 ns experimento1.tcl >/dev/null 2>&1
 RETVAL=$?
 cd ../../
@@ -27,4 +27,17 @@ cd scripts/extractData
 RETVAL=$?
 cd ../../
 [ "$RETVAL" = "0" ] && echo "[DONE]" || echo "[FAIL]"
+
+
+cd DSDV/experimento2
+./build.sh
+cd ../../
+
+cd AODV/experimento2
+./build.sh
+cd ../../
+
+cd OLSR/experimento2
+./build.sh
+cd ../../
 

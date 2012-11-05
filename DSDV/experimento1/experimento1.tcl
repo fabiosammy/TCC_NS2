@@ -19,7 +19,7 @@ proc stop {} {
 	close $f0
 	close $f1
 	close $f2
-	exec cat out.tr | perl ../../scripts/extractData/delay_calc_avg-ng.pl $val(t) 1 
+	exec cat out.tr | perl ../../scripts/extractData/delay_calc_avg-ng.pl $val(t) 1 delay.dat 
 	exit 0
 }
 

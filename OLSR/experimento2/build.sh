@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "AODV - EXPERIMENTO2:"
+echo "OLSR - EXPERIMENTO2:"
 
 for MOVE in  $(ls ../../scripts/experimento2/movements/*.tcl) ; do
 	MOVE=${MOVE/*\//}
