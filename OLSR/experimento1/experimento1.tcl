@@ -50,6 +50,7 @@ $ns namtrace-all-wireless $nf $val(x) $val(y)	;#Para uma área de 500 por 500 me
 set f0 [open lost.dat w]
 set f1 [open byte.dat w]
 set f2 [open pkts.dat w]
+set f3 [open taxa.dat w]
 
 # Cria a topologia
 set topo [new Topography]

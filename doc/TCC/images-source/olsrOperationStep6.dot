@@ -6,11 +6,11 @@ digraph olsrOperation {
 	MH1 -> MH3
 	MH1 -> MH4
 
-	MH2[color=blue]
-	MH4[color=blue]
-	MH5[color=blue]
-	MH7[color=blue]
-	MH9[color=blue]
+	MH2[style=dotted]
+	MH4[style=dotted]
+	MH5[style=dotted]
+	MH7[style=dotted]
+	MH9[style=dotted]
 
 	//Level 2
 	MH2 -> MH5

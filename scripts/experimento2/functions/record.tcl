@@ -12,6 +12,7 @@ proc record { valsnn } {
 	set Slosts 0
 	set Sbytes 0 
 	set Spakts 0
+	set TaxaEntrega 0
 
 	#How many lost packages?
 	for {set i 0} {$i < $valsnn } {incr i} {

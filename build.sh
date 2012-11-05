@@ -29,15 +29,15 @@ cd ../../
 [ "$RETVAL" = "0" ] && echo "[DONE]" || echo "[FAIL]"
 
 
-cd DSDV/experimento2
-./build.sh
-cd ../../
+#cd DSDV/experimento2
+#./build.sh
+#cd ../../
 
-cd AODV/experimento2
-./build.sh
-cd ../../
+#cd AODV/experimento2
+#./build.sh
+#cd ../../
 
-cd OLSR/experimento2
-./build.sh
-cd ../../
+#cd OLSR/experimento2
+#./build.sh
+#cd ../../
 

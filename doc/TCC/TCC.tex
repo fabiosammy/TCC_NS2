@@ -7,6 +7,8 @@
 \usepackage[brazil]{babel}
 \usepackage[latin1]{inputenc}
 
+\usepackage[alf,bibjustif,abnt-full-initials=no,abnt-etal-cite=2,abnt-and-type=1,abnt-etal-text=it,abnt-url-package=url,abnt-emphasize=bf]{abntcite}%[alf]{abntcite}
+
 \usepackage{float}
 \usepackage{subfigure}
 
@@ -32,16 +34,17 @@
 \maketitle
 
 \begin{abstract}
-I am writting yet.
+This article presents a study of different routing protocols in ad hoc networks, analyzing the performance in military scenarios, making comparisons between them through simulations with the NS-2 tool.
+Where we used the protocols DSDV, and OLSR AODL in 2 different scenarios, of which we can analyze the performance a little of each.
 \end{abstract}
 
 \begin{keyWord}
-Test1 Test2 Test3
+Ad hoc networks; military scenarios, routing protocols, AODV, DSDV, OLSR;
 \end{keyWord}
 
 \begin{resumo}
 Este artigo apresenta um estudo de diferentes protocolos de roteamento em redes ad hoc, analizando a performance em cen\'arios militares, realizando compara\c{c}\~oes entre os mesmos atrav\'es de simula\c{c}\~oes com a ferramenta NS-2. 
-Onde foram utilizados os protocolos DSDV, AODL e OLSR em 2 diferentes cenarios, dos quais o protocolo XXXX se destacou no desempenho analizado.
+Onde foram utilizados os protocolos DSDV, AODL e OLSR em 2 diferentes cen\'arios, dos quais podemos analizar um pouco o desempenho de cada um.
 \end{resumo}
 
 \begin{palavraChave}
@@ -57,7 +60,10 @@ Redes ad hoc; Cen\'arios militares; Protocolos de roteamento; AODV; DSDV; OLSR;
 
 %Referencias bibliograficas sao editadas no arquivo referencias/bibliografias.bib
 \section{Refer\^encias bibliogr\'aficas}
-\bibliographystyle{sbc}
+%\bibliographystyle{sbc}
+\bibliographystyle{abnt-alf}
+\def\bibindent{0.5cm}
+\renewcommand{\emph}{\textbf}
 \bibliography{referencias}
 
 \end{document}

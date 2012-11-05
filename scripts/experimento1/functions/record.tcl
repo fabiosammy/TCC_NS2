@@ -1,5 +1,5 @@
 proc record { valsnn } {
-	global f0 f1 f2
+	global f0 f1 f2 f3
 	global sink
 
 	#Get an instance of the simulator
@@ -20,6 +20,15 @@ proc record { valsnn } {
 	for {set i 0} {$i < $valsnn } {incr i} {
 		set pkts($i) [$sink($i) set npkts_]
 	}
+	#Taxa de entrega
+	for {set i 0} {$i < $valsnn } {incr i} {
+		if {[$sink($i) set npkts_] > 0} {
+			set taxa($i) [expr ([$sink($i) set npkts_]*100)/([$sink($i) set npkts_]+[$sink($i) set nlost_])]
+		} else {
+			set taxa($i) 100
+		}
+	}
+	
 
 	#Get the current time
 	set now [$ns now]
@@ -28,6 +37,7 @@ proc record { valsnn } {
 	puts $f0 "$now\t$lost(0)"
 	puts $f1 "$now\t$byte(0)"
 	puts $f2 "$now\t$pkts(0)"
+	puts $f3 "$now\t$taxa(0)"
 
 	#Reset the bytes_ values on the traffic sinks
 	for {set i 0} {$i < $valsnn } {incr i} {

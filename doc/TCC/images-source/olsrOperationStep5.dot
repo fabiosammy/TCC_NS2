@@ -6,8 +6,8 @@ digraph olsrOperation {
 	MH1 -> MH3
 	MH1 -> MH4
 
-	MH2[color=blue]
-	MH4[color=blue]
+	MH2[style=dotted]
+	MH4[style=dotted]
 
 	edge[dir=none]
 	//Level 2

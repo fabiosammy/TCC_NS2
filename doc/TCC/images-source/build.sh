@@ -11,4 +11,8 @@ dot -Teps aodvRREP.dot -o ../images/aodvRREP.eps
 dot -Teps olsrOperationStep1.dot -o ../images/olsrOperationStep1.eps
 dot -Teps olsrOperationStep2.dot -o ../images/olsrOperationStep2.eps
 dot -Teps olsrOperationStep3.dot -o ../images/olsrOperationStep3.eps
+dot -Teps olsrOperationStep4.dot -o ../images/olsrOperationStep4.eps
+dot -Teps olsrOperationStep5.dot -o ../images/olsrOperationStep5.eps
+dot -Teps olsrOperationStep6.dot -o ../images/olsrOperationStep6.eps
+dot -Teps olsrOperationStep7.dot -o ../images/olsrOperationStep7.eps
 

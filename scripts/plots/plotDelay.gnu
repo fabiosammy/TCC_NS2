@@ -28,3 +28,13 @@ plot AODV using 1:2 title 'AODV' with linespoints, \
 	DSDV using 1:2 title 'DSDV' with linespoints, \
 	OLSR using 1:2 title 'OLSR' with linespoints 
 
+set output '../../doc/TCC/images/exp2_delay.eps'
+
+AODV = '../../AODV/experimento2/delay.dat'
+DSDV = '../../DSDV/experimento2/delay.dat'
+OLSR = '../../OLSR/experimento2/delay.dat'
+
+plot AODV using 1:2 title 'AODV' with linespoints, \
+	DSDV using 1:2 title 'DSDV' with linespoints, \
+	OLSR using 1:2 title 'OLSR' with linespoints 
+
