@@ -1,0 +1,25 @@
+graph dsdvOperation {
+	rankdir=LR;
+	{
+		node[width=.3,height=.3,shape=circle]
+		MH1[pos="1,1"]
+		MH2[pos="2,2"]
+		MH3[pos="1,3"]
+		MH4[pos="3,3"]
+		MH5[pos="5,3"]
+		MH6[pos="4,2"]
+		MH7[pos="5,1"]
+		MH8[pos="6,2"]
+	}
+	edge[len=3]
+	MH1 -- MH2 [dir=both]
+	MH2 -- MH3 [dir=both]
+	MH2 -- MH4 [dir=both]
+	MH4 -- MH6 [dir=both]
+	MH6 -- MH5 [dir=both]
+	MH6 -- MH7 [dir=both]
+	MH8 -- MH5 [dir=both]
+	MH8 -- MH7 [dir=both]
+
+}
+
