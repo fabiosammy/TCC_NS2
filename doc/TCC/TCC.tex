@@ -11,6 +11,7 @@
 
 \usepackage{float}
 \usepackage{subfigure}
+\usepackage{setspace}
 
 \sloppy
 
@@ -30,7 +31,15 @@
 	hermanopereira@utfpr.edu.br}
 }
 
+\pagestyle{myheadings}
+\markright{}  % para book, report articles
+
 \begin{document}
+  \setlength{\leftmargini}{1.70cm}
+  \setlength{\labelsep}{.5em}
+  \setlength{\parindent}{1.27cm}
+  \setlength{\parskip}{6pt}
+
 \maketitle
 
 \begin{abstract}
@@ -51,6 +60,9 @@ Onde foram utilizados os protocolos DSDV, AODL e OLSR em 2 diferentes cen\'arios
 Redes ad hoc; Cen\'arios militares; Protocolos de roteamento; AODV; DSDV; OLSR;
 \end{palavraChave}
 
+%configurações gerais
+\singlespacing
+
 \input{sections/introducao}		%Introdução
 %\input{sections/historico}		%Histórico
 \input{sections/protocolos}		%Protocolos de roteamento em redes ad hoc
@@ -59,6 +71,7 @@ Redes ad hoc; Cen\'arios militares; Protocolos de roteamento; AODV; DSDV; OLSR;
 \input{sections/conclusao}		%Conclusão
 
 %Referencias bibliograficas sao editadas no arquivo referencias/bibliografias.bib
+\newpage
 \section{Refer\^encias bibliogr\'aficas}
 %\bibliographystyle{sbc}
 \bibliographystyle{abnt-alf}
