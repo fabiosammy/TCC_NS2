@@ -1,11 +1,11 @@
 \subsection{\textit{Destination sequenced distance vector} - DSDV} 
 O protocolo DSDV \'e um protocolo de roteamento proativo\cite{gorantala}, baseado no algoritmo de vetor de dist\^ancias, que trabalha requisitando periodicamente, de cada um dos n\'os vizinhos, suas tabelas de roteamento, com a finalidade de mant\^e-las atualizadas. 
-Cada n\'o da rede mant\'em uma tabela de roteamento contendo o pr\'oximo salto e o n\'umero de saltos para cada destino alcan\c{c}\'avel. 
+Cada n\'o da rede mant\'em uma tabela de roteamento, contendo o pr\'oximo salto e o n\'umero de saltos para cada destino alcan\c{c}\'avel. 
 As tabelas incluem rotas para todos os n\'os da rede, mesmo que nunca seja necess\'ario enviar pacote para este n\'o. 
 Cada n\'o mant\'em apenas uma rota para cada destino.
 
 Os \textit{loops} de rotas podem ocorrer quando informa\c{c}\~oes de roteamento incorretas s\~ao mantidas na rede ap\'os uma troca de topologia. 
-Geralmente ocorre quando um n\'o detecta uma queda no enlace com o n\'o vizinho e, antes que consiga propagar sua nova tabela, recebe de outro n\'o informa\c{c}\~ao desatualizada referente \`a conex\~ao interrompida. 
+Geralmente, ocorre quando um n\'o detecta uma queda no enlace com o n\'o vizinho e, antes que consiga propagar sua nova tabela, recebe de outro n\'o informa\c{c}\~ao desatualizada referente \`a conex\~ao interrompida. 
 A vantagem principal do DSDV sobre os protocolos baseados em vetor de dist\^ancias tradicionais \'e que ele garante a aus\^encia de \textit{loops}, usando o conceito de n\'umero de sequ\^encia mantido em cada rota. 
 O n\'umero de sequ\^encia \'e estabelecido pelo n\'o destino e \'e incrementado a cada novo aviso de rota.
 As rotas mais recentes possuem um n\'umero de sequ\^encia maior e s\~ao as mais favor\'aveis. 

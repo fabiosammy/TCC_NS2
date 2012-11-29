@@ -1,12 +1,12 @@
 \section{Experimentos e resultados}
 \subsection{Experimentos}
-A fim de poder entender o funcionamento do simulador NS-2 e tamb\'em estudar simula\c{c}\~oes de comunica\c{c}\~ao em cen\'arios militares, foram definidos 2 experimentos te\'oricos, sendo o Experimento 1, um teste simples de converg\^encia de rotas, e o Experimento 2, baseado em estudos realizados por \cite{pereira}, o qual representa um caso de assalto e tomada de posi\c{c}\~ao inimiga.
+Para compreender o funcionamento do simulador NS-2 e tamb\'em estudar simula\c{c}\~oes de comunica\c{c}\~ao em cen\'arios militares, foram definidos 2 experimentos te\'oricos, sendo o Experimento 1, um teste simples de converg\^encia de rotas, e o Experimento 2, baseado em estudos realizados por \cite{pereira}, o qual representa um caso de assalto e tomada de posi\c{c}\~ao inimiga.
 
-Cada experimento possui suas caracter\'isticas, mas exitem uma semalhan\c{c}a base, que \'e o tr\'afego que ir\'a caminhar pela rede, como comentado na se\c{c}\~ao \ref{trafegoDados}, o qual foi escolhido o CBR.
+Cada experimento possui suas caracter\'isticas, mas exite uma semalhan\c{c}a base, que \'e o tr\'afego que ir\'a caminhar pela rede, como comentado na se\c{c}\~ao \ref{trafegoDados}, o qual foi escolhido o CBR.
 
 \subsubsection{Experimento 1}
 O experimento 1 baseia-se na ideia simples de um protocolo de rede \textit{ad hoc}, roteamento din\^amico.
-O objetivo principal deste experimento \'e poder analizar o tempo de converg\^encia de roteamento de uma origem a um destino, alterando uma vez o caminho pelo qual eles realizam a comunica\c{c}\~ao.
+O objetivo principal deste experimento \'e poder analisar o tempo de converg\^encia de roteamento de uma origem a um destino, alterando uma vez o caminho pelo qual eles realizam a comunica\c{c}\~ao.
 A Tabela \ref{tabParamExp1} demonstra resumidamente os par\^ametros utilizados na execu\c{c}\~ao do experimento 1.
 
 \begin{table}[H]
@@ -44,7 +44,7 @@ Quando os Soldados 1 e 3 se afastam do Soldado 2, eles perdem a sua rota por ess
 
 \subsubsection{Experimento 2}
 O experimento 2 foi baseado em estudos realizados por \cite{pereira} em sua tese de mestrado. 
-O objetivo deste experimento \'e analizar o desempenho dos protocolos de roteamento como um todo em um cen\'ario militar. 
+O objetivo deste experimento \'e analisar o desempenho dos protocolos de roteamento como um todo em um cen\'ario militar. 
 \cite{pereira} comenta que esse \'e um cen\'ario t\'ipico de simula\c{c}\~ao de uma opera\c{c}\~ao de assalto e tomada de posi\c{c}\~ao inimiga.
 
 Esse cen\'ario consiste em 4 grupos de soldados e 1 ve\'iculo de apoio, e cada grupo de soldados \'e formado por 4 soldados.
@@ -58,11 +58,11 @@ Cada grupo nesse cen\'ario tem como objetivo tomar a posi\c{c}\~ao inimiga, onde
 	\label{figExp2}
 \end{figure}
 
-Todos os soldados de cada grupo dever\~ao avan\c{c}ar juntos durante o percurso do cen\'ario, n\~ao executando necess\'ariamente um caminho reto durante todo o trajeto.
+Todos os soldados de cada grupo dever\~ao avan\c{c}ar juntos durante o percurso do cen\'ario, n\~ao executando necessariamente um caminho reto durante todo o trajeto.
 
 A Tabela \ref{tabParamExp2} demonstra resumidamente os par\^ametros utilizados nesse experimento. 
 Al\'em do tamanho e n\'umero de conex\~oes e n\'os diferentes do experimento 1, podemos verificar que a velocidade dos n\'os possue uma varia\c{c}\~ao.
-Essa varia\c{c}\~ao ocorre pelo fato de que, os soldados recebem ordens de parada ou avan\c{c}o no percurso, sendo que em cada situa\c{c}\~ao \'e necess\'ario almentar, dimunuir ou at\'e mesmo parar o ritmo de avan\c{c}o no objetivo do cen\'ario.
+Essa varia\c{c}\~ao ocorre pelo fato de que, os soldados recebem ordens de parada ou avan\c{c}o no percurso, sendo que em cada situa\c{c}\~ao \'e necess\'ario aumentar, diminuir ou at\'e mesmo parar o ritmo de avan\c{c}o no objetivo do cen\'ario.
 
 \begin{table}[H]
 	\centering
@@ -80,19 +80,6 @@ Essa varia\c{c}\~ao ocorre pelo fato de que, os soldados recebem ordens de parad
 	\end{tabular}
 	\label{tabParamExp2}
 \end{table}
-
-
-\subsection{M\'etricas de desempenho}
-Com base nos estudo de \cite{pereira} e \cite{schimidt} e informa\c{c}\~oes obtidas por \cite{salles} descritos na se\c{c}\~ao \ref{requisitos}, foram definidas m\'etricas para analizar o comportamento de cada protocolo.
-
-\begin{itemize}
-	\item \textbf{Taxa de entrega de pacotes:} Raz\~ao entre o n\'umero de pacotes entregues para o destino final e o n\'umero de pacotes gerados pela aplica\c{c}\~ao na fonte.
-	\item \textbf{Atraso m\'edio fim a fim dos pacotes de dados:} Inclui todos os poss\'iveis atrasos causados pela lat\^encia da descoberta de rotas, propaga\c{c}\~ao, atrasos devido a retransmiss\~oes da camada MAC e tempos de transfer\^encia.
-	\item \textbf{N\'umero de pacotes de roteamento:} \'E medido a quantidade total de pacotes de roteamento, representada pelos pacotes de descoberta e manuten\c{c}\~ao das rotas enviados pela origem ou encaminhados pelos n\'os intermedi\'arios. No protocolo por demanda (AODV), esses pacotes s\~ao representados pelos pacotes RREQ, RREP e RERR. No DSDV e OLSR, esses pacotes s\~ao representados pelas tabelas de roteamento que s\~ao trocadas periodicamente.
-	\item \textbf{N\'umero de \textit{bytes} de roteamento:} \'E medido a quantidade total de \textit{bytes} em cada pacote de, incluindo a quantidade de \textit{bytes} de cabe\c{c}alho em pacotes de dados, que corresponde, normalmente, ao roteamento na fonte.
-\end{itemize}
-Segundo \cite{pereira}, o tr\'afego referente ao roteamento deve ser o menor poss\'ivel quando comparado ao tr\'afego de dados, pois para se enviar pacotes de roteamento gasta-se energia dos n\'os e consome-se banda, que s\~ao recursos escassos em redes sem fio. 
-Para as redes militares, a taxa de entrega e o atraso s\~ao as m\'etricas mais importantes.
 
 \subsection{An\'alise comparativa dos resultados}
 As Figuras \ref{fig:resulExp1} e \ref{fig:resulExp2} apresentam atrav\'es de gr\'aficos os resultados obtidos dos experimentos executados. Esses resultados possibilitaram a formula\c{c}\~ao das conclus\~oes apresentadas mais adiante nesse trabalho.
@@ -135,9 +122,9 @@ Podemos perceber que a cada instante de tempo, temos pequenas diferen\c{c}as de 
 	\label{tabExp1Result}
 \end{table}
 
-Podemos analizar que o DSDV obt\'em uma r\'apida vantagem em n\'umero de pacotes e \textit{bytes} gerados no experimento em rela\c{c}\~ao aos demais protocolos. Por\'em essa r\'apida vantagem \'e anulada pela taxa de entrega, que foi bem menor em rela\c{c}\~ao ao protocolo AODV e OLSR.
+Podemos analisar que o DSDV obt\'em uma r\'apida vantagem em n\'umero de pacotes e \textit{bytes} gerados no experimento em rela\c{c}\~ao aos demais protocolos. Por\'em essa r\'apida vantagem \'e anulada pela taxa de entrega, que foi bem menor em rela\c{c}\~ao ao protocolo AODV e OLSR.
 
-O objetivo inicial desse experimento era analizar o tempo de converg\^encia entre os protocolos, o qual n\~ao foi muito significativo, pois resultou em diferen\c{c}as menores de 1 ms entre os protocolos de roteamento. 
+O objetivo inicial desse experimento era analisar o tempo de converg\^encia entre os protocolos, o qual n\~ao foi muito significativo, pois resultou em diferen\c{c}as menores de 1 ms entre os protocolos de roteamento. 
 O destaque nesse experimento ficou na taxa de entrega, pois demonstra que o OLSR e p AODV mantiveram uma taxa pr\'oximo de 100\%, e o DSDV obteve uma taxa inferior.
 
 \subsubsection{Experimento 2}

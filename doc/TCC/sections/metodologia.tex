@@ -9,7 +9,7 @@ O NS-2 \'e um simulador de eventos discreto, oferecendo suporte \`a simula\c{c}\
 
 \subsection{Cen\'arios militares}
 Segundo \cite{pereira}, em um cen\'ario de opera\c{c}\~oes militares \'e indispens\'avel o uso de tecnologias de comunica\c{c}\~ao sem fio. 
-Principalmente das tecnologias que tenham capacidade de atuar de forma aut\^onoma e proporcionar qualidade de conex\~ao juntamente com o grau de dinamicidade na topologia da rede.
+Principalmente, das tecnologias que tenham capacidade de atuar de forma aut\^onoma e proporcionar qualidade de conex\~ao juntamente com o grau de dinamicidade na topologia da rede.
 A qualidade da rede de comuni\c{c}\~ao utilizada em uma opera\c{c}\~ao militar pode acarretar o sucesso ou fracasso da miss\~ao.
 
 \subsubsection{Requisitos b\'asicos}\label{requisitos}
@@ -47,8 +47,52 @@ Esses mesmos princ\'ipios foram mapeados pelos autores \cite{salles} em outros c
 
 Baseando-se em tais informa\c{c}\~oes descritas por \cite{salles} e estudos realizados por \cite{pereira}, definiu-se o mapeamento de "Desempenho" realizado por \cite{salles} como base para criar as m\'etricas de desempenho para comparar os protocolos de roteamento.
 
+\subsection{M\'etricas de desempenho}
+Com base nos estudo de \cite{pereira} e \cite{schimidt} e informa\c{c}\~oes obtidas por \cite{salles} descritos na se\c{c}\~ao \ref{requisitos}, foram definidas m\'etricas para analizar o comportamento de cada protocolo.
+
+\begin{itemize}
+	\item \textbf{Taxa de entrega de pacotes:} Raz\~ao entre o n\'umero de pacotes entregues para o destino final e o n\'umero de pacotes gerados pela aplica\c{c}\~ao na fonte.
+	\item \textbf{Atraso m\'edio fim a fim dos pacotes de dados:} Inclui todos os poss\'iveis atrasos causados pela lat\^encia da descoberta de rotas, propaga\c{c}\~ao, atrasos devido a retransmiss\~oes da camada MAC e tempos de transfer\^encia.
+	\item \textbf{N\'umero de pacotes de roteamento:} \'E medido a quantidade total de pacotes de roteamento, representada pelos pacotes de descoberta e manuten\c{c}\~ao das rotas enviados pela origem ou encaminhados pelos n\'os intermedi\'arios. No protocolo por demanda (AODV), esses pacotes s\~ao representados pelos pacotes RREQ, RREP e RERR. No DSDV e OLSR, esses pacotes s\~ao representados pelas tabelas de roteamento que s\~ao trocadas periodicamente.
+	\item \textbf{N\'umero de \textit{bytes} de roteamento:} \'E medido a quantidade total de \textit{bytes} em cada pacote de, incluindo a quantidade de \textit{bytes} de cabe\c{c}alho em pacotes de dados, que corresponde, normalmente, ao roteamento na fonte.
+\end{itemize}
+Segundo \cite{pereira}, o tr\'afego referente ao roteamento deve ser o menor poss\'ivel quando comparado ao tr\'afego de dados, pois para se enviar pacotes de roteamento gasta-se energia dos n\'os e consome-se banda, que s\~ao recursos escassos em redes sem fio. 
+Para as redes militares, a taxa de entrega e o atraso s\~ao as m\'etricas mais importantes.
+
 \subsection{Tr\'afego de dados}\label{trafegoDados}
 Para obter uma compara\c{c}\~ao justa entre todos os protocolos, \'e necess\'ario selecionar um agente que n\~ao crie condi\c{c}\~oes de desigualdade, como mecanismos pr\'oprios de controle de congestionamento.
 O simulador utilizado, NS-2, oferece a possibilidade de gerar conex\~oes de tr\'afego TCP(\textit{Transport Control Protocol}) ou CBR(\textit{Constant Bit Rate}).
 O documento \cite{rfc793} define que o TCP possui um mecanismo pr\'oprio de controle de congestionamento, e tamb\'em os pacotes de reconhecimento (ACK) do agente disputam o canal, podendo causar colis\~oes e degradar o desempenho.
 Com base nisso, o CBR(\textit{Constant Bit Rate}) foi selecionado, o qual usa agente UDP(\textit{User Datagram Protocol}), que n\~ao possui um controle de congestionamento pr\'oprio \cite{rfc768}.
+
+\subsection{Leitura dos resultados}
+
+\begin{verbatim}
+M 0.10000 0 (60.00, 10.00, 0.00), (60.00, 460.00), 1.50
+M 0.10000 1 (200.00, 50.00, 0.00), (200.00, 150.00), 1.50
+M 0.10000 2 (340.00, 10.00, 0.00), (340.00, 460.00), 1.50
+M 0.10000 3 (200.00, 300.00, 0.00), (200.00, 300.00), 1.50
+s -t 0.100000000 -Hs 2 -Hd -2 -Ni 2 -Nx 340.00 -Ny 10.00 -Nz 0.00 
+ -Ne -1.000000 -Nl AGT -Nw --- -Ma 0 -Md 0 -Ms 0 -Mt 0 -Is 2.0 
+ -Id 0.0 -It cbr -Il 512 -If 0 -Ii 0 -Iv 32 -Pn cbr -Pi 0 -Pf 0 -Po 0 
+r -t 0.100000000 -Hs 2 -Hd -2 -Ni 2 -Nx 340.00 -Ny 10.00 -Nz 0.00 
+ -Ne -1.000000 -Nl RTR -Nw --- -Ma 0 -Md 0 -Ms 0 -Mt 0 -Is 2.0 
+ -Id 0.0 -It cbr -Il 512 -If 0 -Ii 0 -Iv 32 -Pn cbr -Pi 0 -Pf 0 -Po 0 
+s -t 0.100000000 -Hs 2 -Hd -2 -Ni 2 -Nx 340.00 -Ny 10.00 -Nz 0.00 
+ -Ne -1.000000 -Nl RTR -Nw --- -Ma 0 -Md 0 -Ms 0 -Mt 0 -Is 2.255 
+ -Id -1.255 -It AODV -Il 48 -If 0 -Ii 0 -Iv 30 -P aodv -Pt 0x2 -Ph 1 
+ -Pb 1 -Pd 0 -Pds 0 -Ps 2 -Pss 4 -Pc REQUEST 
+s -t 0.100115000 -Hs 2 -Hd -2 -Ni 2 -Nx 340.00 -Ny 10.00 -Nz 0.00 
+ -Ne -1.000000 -Nl MAC -Nw --- -Ma 0 -Md ffffffff -Ms 2 -Mt 800 
+ -Is 2.255 -Id -1.255 -It AODV -Il 106 -If 0 -Ii 0 -Iv 30 -P aodv 
+ -Pt 0x2 -Ph 1 -Pb 1 -Pd 0 -Pds 0 -Ps 2 -Pss 4 -Pc REQUEST 
+r -t 0.100963485 -Hs 1 -Hd -2 -Ni 1 -Nx 200.00 -Ny 50.00 -Nz 0.00 
+ -Ne -1.000000 -Nl MAC -Nw --- -Ma 0 -Md ffffffff -Ms 2 -Mt 800 
+ -Is 2.255 -Id -1.255 -It AODV -Il 48 -If 0 -Ii 0 -Iv 30 -P aodv 
+ -Pt 0x2 -Ph 1 -Pb 1 -Pd 0 -Pds 0 -Ps 2 -Pss 4 -Pc REQUEST 
+r -t 0.100988485 -Hs 1 -Hd -2 -Ni 1 -Nx 200.00 -Ny 50.00 -Nz 0.00 
+ -Ne -1.000000 -Nl RTR -Nw --- -Ma 0 -Md ffffffff -Ms 2 -Mt 800 
+ -Is 2.255 -Id -1.255 -It AODV -Il 48 -If 0 -Ii 0 -Iv 30 -P aodv 
+ -Pt 0x2 -Ph 1 -Pb 1 -Pd 0 -Pds 0 -Ps 2 -Pss 4 -Pc REQUEST
+\end{verbatim}
+
