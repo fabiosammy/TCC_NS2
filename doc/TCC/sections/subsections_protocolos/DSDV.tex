@@ -15,7 +15,7 @@ Neste contexto, o uso de n\'umeros de sequ\^encia faz com que o DSDV se adapte m
 \subsubsection{Exemplo de funcionamento do DSDV}
 
 A Figura \ref{figOpDSDV}, descreve uma rede com 8 hosts. 
-Podemos analizar a mudan\c{c}a de roteamento da tabela do MH4 em rela\c{c}\~ao ao movimento do \textit{host} MH1(textit{Mobile Host 1}). 
+Podemos analisar a mudan\c{c}a de roteamento da tabela do MH4 em rela\c{c}\~ao ao movimento do \textit{host} MH1(\textit{Mobile Host} 1). 
 Inicialmente, todos os n\'os anunciam suas informa\c{c}\~oes de roteamento para todos os outros n\'os da rede e, portanto, onde a tabela de roteamento do \textit{host} MH4 inicialmente apresenta o seguinte conte\'udo conforme a tabela \ref{tabRtMH4}.
 
 \begin{figure}[H]
@@ -73,13 +73,13 @@ Agora a tabela de roteamento do MH4 estar\'a com o conte\'udo demonstrado na tab
 	\item Livre de \textit{loops} \cite{gorantala}.
 	\item Problemas com contagem ao infinito \'e reduzido no DSDV \cite{gorantala}.
 	\item Pode-se evitar tr\'afego extra com atualiza\c{c}\~oes incrementais, em vez de atualiza\c{c}\~oes de despejo completo.
-	\item Sele\c{c}\~ao de caminho: O DSDV mant\'em somente o melhor caminho em vez de manter v\'arios caminhos para um mesmo destino. Com isso, o espa\c{c}o da tabela de roteamento \'e reduzida.
+	\item Sele\c{c}\~ao de caminho: O DSDV mant\'em somente o melhor caminho em vez de manter v\'arios caminhos para um mesmo destino. Com isso, o espa\c{c}o da tabela de roteamento \'e reduzido.
 \end{itemize}
 
 \subsubsection{Limita\c{c}\~ oes do DSDV}
 \begin{itemize}
 	\item Desperd\'icio do uso da banda na rede devido a propaga\c{c}\~ao desnecess\'aria de informa\c{c}\~oes de roteamento, mesmo se n\~ao houver mudan\c{c}as na topologia da rede \cite{Patel00energyin}.	
-	\item O DSDV n\~ao suporta multiplos caminhos de rotas \cite{gorantala}.
+	\item O DSDV n\~ao suporta m\'ultiplos caminhos de rotas \cite{gorantala}.
 	\item \'E dif\'icil determinar um tempo de converg\^encia para a propaga\c{c}\~ao das rotas \cite{heg}.
 	\item \'E dif\'icil manter a propaga\c{c}\~ao das tabelas de rotas para uma grande rede. Cada \textit{host} na rede deve manter uma tabela de rotas para propaga\c{c}\~ao. Mas para uma grande rede, isso causaria \textit{overhead} de rede, o qual consome uma maior banda na rede \cite{gorantala}.
 \end{itemize}
