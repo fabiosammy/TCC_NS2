@@ -9,8 +9,8 @@ digraph aodvOperation {
 	C[label="C \n - Verifica rota para o destino. \n - Não encontra rota. \n - Define o caminho reverso. \n - Propaga RREQ para D e E \n - Recebe RREP do nó D \n - Envia RREP"]
 	D[label="D \n - Verifica rota para o destino. \n - Encontra rota com número \nde sequência = s2(>s1). \n - Envia RREP."]
 	E[label="E \n - Verifica rota para o destino. \n - Não encontra rota. \n - Define o caminho reverso. \n - Propaga RREQ para F e G. \n - Deleta o caminho reverso depois \nde expirar o tempo. "]
-	F[label="F \n - Verifica rota para o destino. \n - Não encontra rota."]
-	G[label="G \n - Verifica rota para o destino. \n - Não encontra rota."]
+	F[label="F \n - Verifica rota \npara o destino. \n - Não encontra rota."]
+	G[label="G \n - Verifica rota \npara o destino. \n - Não encontra rota."]
 
 	S -> A[label="RREQ"]
 	A -> S[label="RREP"]
