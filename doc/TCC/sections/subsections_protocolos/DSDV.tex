@@ -15,15 +15,18 @@ Neste contexto, o uso de n\'umeros de sequ\^encia faz com que o DSDV se adapte m
 \subsubsection{Exemplo de funcionamento do DSDV}
 
 A Figura \ref{figOpDSDV}, descreve uma rede com 8 hosts. 
-Podemos analisar a mudan\c{c}a de roteamento da tabela do MH4 em rela\c{c}\~ao ao movimento do \textit{host} MH1(\textit{Mobile Host} 1). 
-Inicialmente, todos os n\'os anunciam suas informa\c{c}\~oes de roteamento para todos os outros n\'os da rede e, portanto, onde a tabela de roteamento do \textit{host} MH4 inicialmente apresenta o seguinte conte\'udo conforme a tabela \ref{tabRtMH4}.
+Podemos analisar a mudan\c{c}a de roteamento da tabela do MH4 em rela\c{c}\~ao ao movimento do \textit{host} MH1(\textit{Mobile Host} 1), onde o movimento \'e representado pelas setas com estilo pontilhado. 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=.5]{dsdvOperation.eps}
+	\includegraphics[scale=.4]{dsdvOperation.eps}
 	\caption{Exemplo de opera\c{c}\~ ao do DSDV}
 	\label{figOpDSDV}
 \end{figure}
+
+Uma tabela de roteamento do DSDV para cada n\'o na rede cont\'em informa\c{c}\~oes do n\'o de destino, o pr\'oximo salto na rota para alcan\c{c}ar o destino, a m\'etrica com o valor de quantos saltos s\~ao necess\'arios para alcan\c{c}ar o destino, o n\'umero de sequ\^encia utilizado para sincroniza\c{c}\~ao das rotas, o install, atuando como um marcador de tempo da rota, para decidir de deletar ou n\~ao uma nova informa\c{c}\~ao topol\'ogica, e o campo informa\c{c}\~ao, servindo como um ponteiro para indicar a tabela com informa\c{c}\~oes sobre a estabilidade da rota.
+
+Inicialmente, todos os n\'os anunciam suas informa\c{c}\~oes de roteamento para todos os outros n\'os da rede e, portanto, onde a tabela de roteamento do \textit{host} MH4 inicialmente apresenta o seguinte conte\'udo conforme a tabela \ref{tabRtMH4}.
 
 \begin{table}[H]
 	\centering
@@ -78,7 +81,7 @@ Agora a tabela de roteamento do MH4 estar\'a com o conte\'udo demonstrado na tab
 
 \subsubsection{Limita\c{c}\~ oes do DSDV}
 \begin{itemize}
-	\item Desperd\'icio do uso da banda na rede devido a propaga\c{c}\~ao desnecess\'aria de informa\c{c}\~oes de roteamento, mesmo se n\~ao houver mudan\c{c}as na topologia da rede \cite{Patel00energyin}.	
+	\item Desperd\'icio do uso da banda na rede devido \`a propaga\c{c}\~ao desnecess\'aria de informa\c{c}\~oes de roteamento, mesmo se n\~ao houver mudan\c{c}as na topologia da rede \cite{Patel00energyin}.	
 	\item O DSDV n\~ao suporta m\'ultiplos caminhos de rotas \cite{gorantala}.
 	\item \'E dif\'icil determinar um tempo de converg\^encia para a propaga\c{c}\~ao das rotas \cite{heg}.
 	\item \'E dif\'icil manter a propaga\c{c}\~ao das tabelas de rotas para uma grande rede. Cada \textit{host} na rede deve manter uma tabela de rotas para propaga\c{c}\~ao. Mas para uma grande rede, isso causaria \textit{overhead} de rede, o qual consome uma maior banda na rede \cite{gorantala}.
