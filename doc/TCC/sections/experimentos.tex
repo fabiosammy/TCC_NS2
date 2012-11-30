@@ -1,4 +1,4 @@
-\section{Experimentos e resultados}
+\section{Experimentos e resultados}\label{experimentos}
 \subsection{Experimentos}
 Para compreender o funcionamento do simulador NS-2 e tamb\'em estudar simula\c{c}\~oes de comunica\c{c}\~ao em cen\'arios militares, foram definidos 2 experimentos te\'oricos, sendo o Experimento 1, um teste simples de converg\^encia de rotas, e o Experimento 2, baseado em estudos realizados por \cite{pereira}, o qual representa um caso de assalto e tomada de posi\c{c}\~ao inimiga.
 
@@ -29,7 +29,7 @@ A Tabela \ref{tabParamExp1} demonstra resumidamente os par\^ametros utilizados n
 A Figura \ref{figExp1} demonstra o experimento realizado, onde cada Soldado(n\'o) deve atingir seu respectivo Destino.
 Cada Soldado inicia seu movimento a um tempo determinado na simula\c{c}\~ao, onde na Figura \ref{figExp1} \'e referenciado pelo prefixo \textit{at}, o qual \'e defido em segundos, e abaixo exibe o movimento de cada Soldado, onde nesse experimento todos os Soldados possuem um movimento constante de 1,5 metros por segundo. 
 
-A fonte de tr\'afego nesse experimento \'e somente de uma, a qual realiza uma conex\~ao do Soldado 3(fonte) ao Soldado 1(destino). Inicialmente vai passar pelo Soldado 2 essa comunica\c{c}\~ao, pois os Soldados 1 e 3 n\~ao est\~ao pr\'oximos a fim de criarem uma rota direta.
+A fonte de tr\'afego nesse experimento \'e somente de uma, a qual realiza uma conex\~ao do Soldado 3(fonte) ao Soldado 1(destino). Inicialmente essa comunica\c{c}\~ao passar\'a pelo Soldado 2, pois os Soldados 1 e 3 n\~ao est\~ao pr\'oximos um do outro a fim de criarem uma rota direta.
 
 \begin{figure}[H]
 	\centering
@@ -39,8 +39,8 @@ A fonte de tr\'afego nesse experimento \'e somente de uma, a qual realiza uma co
 \end{figure}
 
 Observe que o Soldado 4 inicia somente seu movimento ao tempo de 150,0 segundos, enquanto os demais Soldados iniciam seus movimentos ao instante de 0,1 segundos.
-Isso foi definido pelo fato do tempo em que o Soldado 2 atinja seu objetivo e pare de seguir em frente, enquanto os Soldados 1 e 3 continuam seus movimentos, e possam alcan\c{c}ar e estar dentro do raio de comunica\c{c}\~ao com o Soldado 4.
-Quando os Soldados 1 e 3 se afastam do Soldado 2, eles perdem a sua rota por esse \textit{host} da rede, e necessitam buscar uma nova rota, a qual seguir\'a pelo Soldado 4, e \'e nesse ponto onde cada protocolo dever\'a gerar resultados distintos.
+Esses tempos de inicio de movimento foram definidos pelo fato do tempo em que o Soldado 2 precisa para atingir seu objetivo e parar de seguir em frente, enquanto os Soldados 1 e 3 continuam seus movimentos, e possam alcan\c{c}ar e estar dentro do raio de comunica\c{c}\~ao com o Soldado 4.
+Quando os Soldados 1 e 3 se afastam do Soldado 2, eles perdem a sua rota por esse n\'o da rede, e necessitam buscar uma nova rota, a qual seguir\'a pelo Soldado 4, o qual nesse ponto poder\'a gerar dados diferentes de resultados.
 
 \subsubsection{Experimento 2}
 O Experimento 2 foi baseado em estudos realizados por \cite{pereira} em sua tese de mestrado. 
@@ -58,10 +58,10 @@ Cada grupo nesse cen\'ario tem como objetivo tomar a posi\c{c}\~ao inimiga, onde
 	\label{figExp2}
 \end{figure}
 
-Todos os soldados de cada grupo dever\~ao avan\c{c}ar juntos durante o percurso do cen\'ario, n\~ao executando necessariamente um caminho reto durante todo o trajeto.
+Todos os soldados de cada grupo dever\~ao avan\c{c}ar juntos durante o percurso do cen\'ario, n\~ao executando necessariamente um caminho em linha reta durante todo o trajeto.
 
 A Tabela \ref{tabParamExp2} demonstra resumidamente os par\^ametros utilizados nesse experimento. 
-Al\'em do tamanho e n\'umero de conex\~oes e n\'os diferentes do Experimento 1, podemos verificar que a velocidade dos n\'os possuem uma varia\c{c}\~ao.
+Al\'em do tamanho, n\'umero de conex\~oes e n\'os diferentes do Experimento 1, podemos verificar que a velocidade dos n\'os possuem uma varia\c{c}\~ao.
 Essa varia\c{c}\~ao ocorre pelo fato de que, os soldados recebem ordens de parada ou avan\c{c}o no percurso, sendo que em cada situa\c{c}\~ao \'e necess\'ario aumentar, diminuir ou at\'e mesmo parar o ritmo de avan\c{c}o no objetivo do cen\'ario.
 
 \begin{table}[H]
@@ -82,10 +82,9 @@ Essa varia\c{c}\~ao ocorre pelo fato de que, os soldados recebem ordens de parad
 \end{table}
 
 \subsection{An\'alise comparativa dos resultados}
-As Figuras \ref{fig:resulExp1} e \ref{fig:resulExp2} apresentam atrav\'es de gr\'aficos os resultados obtidos dos experimentos executados. Esses resultados possibilitaram a formula\c{c}\~ao das conclus\~oes apresentadas mais adiante nesse trabalho.
 
 \subsubsection{Experimento 1}
-Nos gr\'aficos da Figura \ref{fig:resulExp1} \'e poss\'ivel notar que n\~ao houveram muitas diferen\c{c}as entre os dados dos diferentes protocolos. A ideia do experimento aqui apresentado \'e testar o tempo de converg\^encia, o qual nos gr\'aficos \'e representado pela Figura \ref{fig:resulExp1}(b).
+
 
 Podemos perceber que a cada instante de tempo, temos pequenas diferen\c{c}as de roteamento, estes representados pelos gr\'aficos (c) e (d) da Figura \ref{fig:resulExp1}. A Tabela \ref{tabExp1Result} demonstra melhor estes resultados, sendo o resultado do total de dados trafegados pela rede no Experimento 1.
 
@@ -102,8 +101,6 @@ Podemos perceber que a cada instante de tempo, temos pequenas diferen\c{c}as de 
 	\end{tabular}
 	\label{tabExp1Result}
 \end{table}
-
-Podemos analisar que o DSDV obt\'em uma r\'apida vantagem em n\'umero de pacotes e \textit{bytes} gerados no experimento em rela\c{c}\~ao aos demais protocolos. Por\'em essa r\'apida vantagem \'e anulada pela taxa de entrega, que foi bem menor em rela\c{c}\~ao ao protocolo AODV e OLSR.
 
 O objetivo inicial desse experimento era analisar o tempo de converg\^encia entre os protocolos, o qual n\~ao foi muito significativo, pois resultou em diferen\c{c}as menores de 1 ms entre os protocolos de roteamento. 
 O destaque nesse experimento ficou na taxa de entrega, pois demonstra que o OLSR e o AODV mantiveram uma taxa pr\'oximo de 100\%, e o DSDV obteve uma taxa inferior.

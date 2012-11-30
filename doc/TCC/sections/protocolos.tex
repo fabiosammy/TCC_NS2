@@ -1,14 +1,20 @@
-\section{Protocolos de roteamento em redes \textit{ad hoc}}
+\section{Protocolos de roteamento em redes \textit{ad hoc}}\label{protocols}
 
-Em redes m\'oveis \textit{ad hoc}, uma rota entre dois n\'os pode ser formada por v\'arios saltos atrav\'es de um ou mais n\'os na rede. 
+Em redes m\'oveis \textit{ad hoc}, uma rota entre dois n\'os pode ser formada por saltos atrav\'es de um ou mais n\'os na rede, na qual, cada salto representa uma passagem por diferentes n\'os at\'e chegar ao destino desejado. 
 
-Os protocolos s\~ao variados, mas segundo \cite{gorantala}, somente dois s\~ao de suma import\^ancia nas redes \textit{ad hoc}, o DSDV(\textit{Destination Sequenced Distance Vector}), para redes pequenas, e o AODV(\textit{Ad-hoc On-Demand Distance Vector}), para redes \textit{ad hoc} em geral. 
+Os protocolos de roteamento em redes \textit{ad hoc} precisam lidar constantemente com as trocas de topologia da rede, a qual acarreta em atualizar ou procurar novas rotas entre os n\'os da rede. 
+A troca de topologia ocorre quando um n\'o da rede se desloca fisicamente na \'area de comunica\c{c}\~ao, alterando a conex\~ao com os vizinhos, encontrando novas ou perdendo antigas conex\~oes.
+
+Os protocolos de roteamento s\~ao variados, mas segundo \cite{gorantala}, somente dois s\~ao de suma import\^ancia nas redes \textit{ad hoc}, o DSDV(\textit{Destination Sequenced Distance Vector}), para redes pequenas, e o AODV(\textit{Ad-hoc On-Demand Distance Vector}), para redes \textit{ad hoc} em geral. 
 Cada protocolo trabalha de uma forma diferente, podendo ser pr\'o-ativo ou reativo. 
 "Os protocolos pr\'o-ativos mant\^em rotas para todos os n\'os da rede, independente do uso ou necessidade destas rotas. (...) J\'a os protocolos reativos iniciam as atividades de roteamento de acordo com a demanda" \cite{pereira}.
 
-Os roteadores em uma rede \textit{ad hoc} trocam informa\c{c}\~oes de roteamento uns com os outros com a finalidade de tomar conhecimento das disponibilidades de rotas e da topologia da rede.\cite{pereira}
+Os roteadores em uma rede \textit{ad hoc} trocam informa\c{c}\~oes de roteamento uns com os outros com a finalidade de tomar conhecimento das disponibilidades de rotas e da topologia da rede \cite{pereira}. 
+Essa troca de informa\c{c}\~oes pode acarretar em \textit{loop} de roteamento, a qual \'e uma condi\c{c}\~ao em que um pacote \'e transmitido continuamente em uma s\'erie de n\'os, sem sequer alcan\c{c}ar seu n\'o de destino desejado. 
+Esse \textit{loop} pode ocorrer quando dois ou mais n\'os t\^em informa\c{c}\~oes de roteamento que indicam de forma incorreta que uma rota \'e v\'alida para um n\'o de destino, por\'em esse n\'o de destino \'e inalcan\c{c}\'avel atrav\'es desta mesma rota. 
+Essa \'e mais uma condi\c{c}\~ao em que os protocolos de roteamento precisam trabalhar e corrigir.
 
-As subse\c{c}\~oes a seguir apresentam os protocolos DSDV, AODV e OLSR, os quais são analizados nos experimentos desse trabalho.
+As subse\c{c}\~oes a seguir apresentam os protocolos DSDV, AODV e OLSR, os quais s\~ao analisados nos experimentos desse trabalho.
 
 \input{sections/subsections_protocolos/DSDV.tex}	%Destination sequenced distance vector - DSDV
 \input{sections/subsections_protocolos/AODV.tex}	%Ad hoc on demand distance vector} - AODV

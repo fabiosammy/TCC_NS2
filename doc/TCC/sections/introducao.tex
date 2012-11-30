@@ -2,13 +2,8 @@
 Atualmente, a maioria da popula\c{c}\~ao possui um dispositivo port\'atil com disponibilidade de conex\~ao em redes sem-fio e capaz de se comunicar com outros dispositivos. 
 Com a populariza\c{c}\~ao destes dispositivos, \'e muito comum existirem in\'umeras redes sem-fio dispon\'iveis para conex\~ao abertamente, ou a possibilidade de se criar uma nova conforme necessidade.
 
-As redes sem-fio (chamadas de \textit{wireless}), prov\^em comunica\c{c}\~ao, seja com uma pequena ou grande rede de comunica\c{c}\~ao. 
-Essas redes podem ser classificadas em:
-
-\begin{itemize}
-	\item Redes infra-estruturadas.
-	\item Redes \textit{ad hoc}.
-\end{itemize}
+As redes sem-fio (chamadas de \textit{wireless}) prov\^em comunica\c{c}\~ao, seja com uma pequena ou grande rede de comunica\c{c}\~ao, a qual \'e determinada pela quantidade de n\'os na rede. 
+Podendo essas redes serem classificadas em Eedes infra-estruturadas ou Redes \textit{ad hoc}.
 
 Nas redes infra-estruturadas, toda a comuni\c{c}\~ao entre os n\'os m\'oveis \'e feita pelo meio de uma Esta\c{c}\~ao de Suporte \`a Mobilidade (ESM) na rede fixa.
 A ESM gera sinal oferecendo acesso aos \textit{hosts}, e os \textit{hosts} s\'o geram conex\~oes, aplica\c{c}\~oes dos usu\'arios. Quem gera as rotas, o roteador, \'e a ESM. 
@@ -24,6 +19,13 @@ As MANETs proporcionam estruturas de comunica\c{c}\~ao em ambientes com obst\'ac
 Um cen\'ario de opera\c{c}\~ao militar pode ser visto como uma situa\c{c}\~ao em que as MANETs s\~ao requiridas para viabilizar a comunica\c{c}\~ao em um ambiente hostil e geograficamente acidentado, n\~ao possibilitando a exist\^encia de uma estrutura fixa \cite{schimidt}.
 
 Segundo \cite{salles}, a necessidade de uma comunica\c{c}\~ao r\'apida em uma equipe militar \'e essencial para obte\c{c}\~ao de sucesso em operac\~oes, pois qualquer atraso na comunicac\~ao pode desencadear um final catastr\'ofico na execuc\~ao da opera\c{c}\~ao. 
-Os diversos protocolos existentes das redes \textit{ad hoc} diferenciam-se em: n\'umero de pacotes de requisic\~oes a transitar na rede, modo de atualizac\~ao das rotas, sistema de armazenamento de rotas, e outros. Portanto, a escolha do protocolo de roteamento pode influenciar no desempenho final da rede.
+Os diversos protocolos existentes das redes \textit{ad hoc} diferenciam-se em: n\'umero de pacotes de requisic\~oes a transitar na rede, modo de atualizac\~ao das rotas, sistema de armazenamento de rotas, e outros. 
+Portanto, a escolha do protocolo de roteamento pode influenciar no desempenho final da rede.
 
 O objetivo deste artigo \'e apresentar um estudo de diferentes protocolos de roteamento em redes \textit{ad hoc} em cen\'arios militares, atrav\'es de m\'etricas de performance baseados em estudos realizados por \cite{pereira} e \cite{salles}.
+
+Na se\c{c}\~ao \ref{protocols} \'e apresentado o funcionamento dos protocolos utilizados no desenvolvimento dos experimentos, destacando as vantagens e desvantagens de cada protocolos e tamb\'em demonstrado um exemplo de funcionamento do protocolo. 
+A se\c{c}\~ ao \ref{metodologia} descreve a metodologia utilizada no desenvolvimento deste trabalho, e tamb\'em condi\c{c}\~oes envolvidas para realizar os experimentos, como o gerador de tr\'afego utilizado e as m\'etricas de compara\c{c}\~ao avaliadas.
+Os resultados e compara\c{c}\~oes de cada protocolo s\~ao apresentados na se\c{c}\~ao \ref{experimentos}, representados por dados em tabelas.
+
+E por fim, na se\c{c}\~ao \ref{conclusao}, s\~ao descritas as conclus\~oes obtidas com a pesquisa realizada durante todo o tempo de trabalho, e tamb\'em s\~ao apresentadas propostas para trabalhos futuros.
