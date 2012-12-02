@@ -28,6 +28,6 @@ digraph experimento2 {
 
 	Tank -> DST01 -> DST02 -> DST03 -> DST04 -> DST05 -> DST06 -> DS[style="dashed",color="gray"];
 
-	label="\n\nExperimento 2 \nÁrea 3000x3000m - 600 segundos \n*SN = Soldado \n*DST NN = Destino do tanque"
+	label="\n\nExperimento 2 \nÁrea 1000x1000m - 600 segundos \n*SN = Soldado \n*DST NN = Destino do tanque"
 }
 

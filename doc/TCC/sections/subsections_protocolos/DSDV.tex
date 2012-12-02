@@ -24,7 +24,15 @@ Podemos analisar a mudan\c{c}a de roteamento da tabela do MH4 em rela\c{c}\~ao a
 	\label{figOpDSDV}
 \end{figure}
 
-Uma tabela de roteamento do DSDV para cada n\'o na rede cont\'em informa\c{c}\~oes do n\'o de destino, o pr\'oximo salto na rota para alcan\c{c}ar o destino, a m\'etrica com o valor de quantos saltos s\~ao necess\'arios para alcan\c{c}ar o destino, o n\'umero de sequ\^encia utilizado para sincroniza\c{c}\~ao das rotas, o install, atuando como um marcador de tempo da rota, para decidir de deletar ou n\~ao uma nova informa\c{c}\~ao topol\'ogica, e o campo informa\c{c}\~ao, servindo como um ponteiro para indicar a tabela com informa\c{c}\~oes sobre a estabilidade da rota.
+Uma tabela de roteamento do DSDV, cont\'em, para cada n\'o na rede:
+\begin{itemize}
+	\item Informa\c{c}\~oes do n\'o de destino;
+	\item o pr\'oximo salto na rota para alcan\c{c}ar o destino;
+	\item a m\'etrica com o valor de quantos saltos s\~ao necess\'arios para alcan\c{c}ar o destino;
+	\item o n\'umero de sequ\^encia utilizado para sincroniza\c{c}\~ao das rotas;
+	\item o install, atuando como um marcador de tempo da rota, para decidir de deletar ou n\~ao uma nova informa\c{c}\~ao topol\'ogica; e
+	\item o campo informa\c{c}\~ao, servindo como um ponteiro para indicar a tabela com informa\c{c}\~oes sobre a estabilidade da rota.
+\end{itemize}
 
 Inicialmente, todos os n\'os anunciam suas informa\c{c}\~oes de roteamento para todos os outros n\'os da rede e, portanto, onde a tabela de roteamento do \textit{host} MH4 inicialmente apresenta o seguinte conte\'udo conforme a tabela \ref{tabRtMH4}.
 
