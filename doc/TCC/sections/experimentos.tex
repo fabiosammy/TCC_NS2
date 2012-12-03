@@ -120,14 +120,17 @@ J\'a o DSDV, mesmo atualizando as tabelas de roteamento a cada instante de tempo
 Os resultados do protocolo OLSR podem ser explicados pelo fato de que o mesmo atualiza suas rotas quando o estado de conex\~ao muda. Assim, aumenta um pouco o n\'umero de pacotes em rela\c{c}\~ao ao DSDV, por\'em se demonstra eficiente com rela\c{c}\~ao ao AODV pela sua caracter\'istica pr\'o-ativa.
 
 \subsubsection{Experimento 2}
-Diferentemente do Experimento 1, o Experimento 2 possui caracter\'isticas diferentes de mobilidade, onde cada soldado no cen\'ario n\~ao vai percorrer um caminho cont\'inuo e tamb\'em n\~ao vai ter uma velocidade constante de avan\c{c}o para o objetivo final do cen\'ario.
-A fim de trazer uma m\'edia de resultados satisfat\'orios, foram gerados e executados 15 simula\c{c}\~oes de cen\'arios, a fim de obter uma m\'edia somat\'oria entre os dados.
-Os dados da Tabela \ref{tabExp2Result} demonstram a m\'edia dos resultados obtidos no Experimento 2.
+Diferentemente do Experimento 1, o Experimento 2 possui caracter\'isticas espec\'ificas de mobilidade, em que cada soldado no cen\'ario n\~ao vai percorrer um caminho cont\'inuo, e tamb\'em, n\~ao vai ter uma velocidade constante de avan\c{c}o para o objetivo final do cen\'ario.
+Foram gerados e executados 15 simula\c{c}\~oes de cen\'arios, e obtendo-se assim, um resultado de m\'edia somat\'oria entre os dados extra\'idos.
+A Tabela \ref{tabExp2Result} demonstra a m\'edia destes resultados obtidos no Experimento 2.
 
-Analisando a m\'etrica de Taxa de Entrega dos pacotes na comunica\c{c}\~ao, podemos ver que houve uma invers\~ao de desempenho entre o DSDV e o AODV, tendo agora o DSDV um resultado superior ao AODV.
-Esse resultado pode ser explicado pela raz\~ao do tamanho total da rede, o qual teve um aumento significativo no n\'umero de n\'os que comp\~oem a simula\c{c}\~ao.
-Como o modo de funcionamento do DSDV \'e pr\'o-ativo, ele mant\'em as tabelas de rotas para comunica\c{c}\~ao em tempo h\'abil, e o AODV ter\'a que descobrir a rota antes de comunicar em cada nova comunica\c{c}\~ao, e como a rede desse experimento \'e maior, o AODV, dependendo do destino desejado, pode levar muito tempo para criar a comunica\c{c}\~ao, descartando os pacotes.
-Essa mesma caracter\'istica influencia nos resultados da m\'etrica de desempenho de Atraso M\'edio, o qual o DSDV tem um resultado superior ao AODV, sendo mais r\'apido para entregar os pacotes.
+Analisando a m\'etrica de Taxa de Entrega dos pacotes na simula\c{c}\~ao, pode-se observar que houve uma invers\~ao de desempenho entre o DSDV e o AODV, se comparado com o Experimento 1, pois o DSDV teve um resultado superior ao AODV.
+Esse resultado pode ser explicado com base no tamanho total da rede, o qual teve um aumento significativo no n\'umero de n\'os que comp\~oem a simula\c{c}\~ao.
+Como o modo de funcionamento do DSDV \'e pr\'o-ativo, ele mant\'em as tabelas de rotas para a comunica\c{c}\~ao. Em contrapartida, o AODV ter\'a que descobrir a rota antes de comunicar, por ser um protocolo reativo.
+Como a rede desse experimento \'e maior, \'e poss\'ivel analisar que, dependendo do destino desejado, o AODV pode levar muito tempo para criar a comunica\c{c}\~ao, descartando os pacotes.
+
+Essas mesmas caracter\'isticas, pr\'o-ativa e reativa, influenciam nos resultados da m\'etrica de desempenho de Atraso M\'edio, o qual o DSDV tem um resultado superior ao AODV, sendo mais r\'apido para entregar os pacotes.
+A mesma caracter\'istica pr\'o-ativa pode explicar o resultado do protocolo OLSR tanto para as m\'etricas Taxa de Entrega como para o Atraso M\'edio.
 
 \begin{table}[H]
 	\centering
@@ -143,7 +146,8 @@ Essa mesma caracter\'istica influencia nos resultados da m\'etrica de desempenho
 	\label{tabExp2Result}
 \end{table}
 
-Contudo, analisando as m\'etricas N\'umero de Pacotes e N\'umero de \textit{MegaBytes}, \'e poss\'ivel perceber que o DSDV tamb\'em foi superior em relac{c}\~ao ao AODV na efici\^encia de roteamento.
-Esse resultado foi favorecido pela caracter\'istica pr\'o-ativa em um experimento com um maior n\'umero de n\'os, logo que o DSDV n\~ao precisa buscar toda a topologia da rede para encontrar o destino.
+Analisando as m\'etricas N\'umero de Pacotes e N\'umero de \textit{MegaBytes}, percebe-se que o DSDV tamb\'em foi superior em rela\c{c}\~ao ao AODV na efici\^encia de roteamento.
+Esse resultado foi favorecido pela caracter\'istica pr\'o-ativa em um experimento com um maior n\'umero de n\'os, logo que o DSDV n\~ao precisa buscar toda a topologia da rede toda a vez que necessita comunicar com o destino, que \'e o caso do AODV. 
+O mesmo pode-se dizer do protocolo OLSR, por\'em, ele resultou em um n\'umero maior de pacotes que o DSDV por causa da sua base em Estado de Conex\~ao, atualizando as tabelas de roteamento a cada mudan\c{c}a de conex\~ao dos n\'os vizinhos.
 
 
