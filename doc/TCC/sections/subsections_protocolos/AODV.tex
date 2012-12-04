@@ -1,6 +1,6 @@
 \subsection{\textit{Ad hoc on demand distance vector} - AODV}\label{subAODV}
-O protocolo AODV \'e um protocolo reativo\cite{gorantala}, baseado em vetor de dist\^ancias, e pode ser considerado como uma combina\c{c}\~ao de outros dois protocolos, denominados DSR e DSDV. 
-O AODV tem a base do DSR, o qual \'e baseado na forma de trabaho sob demanda, ou seja, descobre rotas somente quando necess\'ario, e utiliza os mecanismos de descoberta de rotas e manuten\c{c}\~ao de rotas.
+O protocolo AODV \'e um protocolo reativo\cite{gorantala}, baseado em Vetor de Dist\^ancias, e pode ser considerado como uma combina\c{c}\~ao de outros dois protocolos, denominados DSR e DSDV. 
+O AODV tem a base do DSR, o qual \'e baseado na forma de trabalho sob demanda, ou seja, descobre rotas somente quando necess\'ario, e utiliza os mecanismos de descoberta de rotas e manuten\c{c}\~ao de rotas.
 Entretanto, o AODV utiliza a caracter\'istica do DSDV de obrigar todos os n\'os intermedi\'arios a estabelecerem dinamicamente entradas em tabelas de roteamento locais para cada destino ativo.
 Cada n\'o tem conhecimento do pr\'oximo salto para alcan\c{c}ar o destino e a dist\^ancia em n\'umero de saltos.
 Pode ser considerado como uma vers\~ao melhorada do DSDV, uma vez que seu funcionamento baseado em demanda minimiza o n\'umero de inunda\c{c}\~oes na rede exigido pelo DSDV para cria\c{c}\~ao de rotas.
@@ -35,7 +35,7 @@ Em cada tabela de roteamento \'e mantido o conjunto de n\'os antecessores que ut
 	\label{figOpAODV}
 \end{figure}
 Acima a Figura \ref{figOpAODV} \'e um exemplo de como o protocolo AODV encontra uma rota para um destino.
-Segue passo-a-passo a explica\c{c}\~ao do processo exibido na Figura \ref{figOpAODV} acima.
+Segue passo-a-passo a explica\c{c}\~ao do processo exibido na Figura \ref{figOpAODV}:
 \begin{enumerate}
 	\item "Origem S" precisa enviar dados ao destino.
 	\item "S" envia RREQ para seus vizinhos "A", "B" e "C".
@@ -53,7 +53,7 @@ Segue passo-a-passo a explica\c{c}\~ao do processo exibido na Figura \ref{figOpA
 
 \subsubsection{Vantagens do AODV}
 \begin{itemize}
-	\item Por causa de sua natureza reativa, o AODV pode lidar com o comportamento di\^amico das redes \textit{ad hoc} \cite{schwingenschlogl}.
+	\item Por causa de sua natureza reativa, o AODV pode lidar com o comportamento din\^amico das redes \textit{ad hoc} \cite{schwingenschlogl}.
 	\item Utilizado tanto para \textit{unicasts} quanto \textit{multicasts} com a \textit{flag} 'J'\footnote{\textit{Join in group} - Usado para aproveitar rota de outros n\'os.} nos pacotes \cite{ramachandranTech}.
 \end{itemize}
 

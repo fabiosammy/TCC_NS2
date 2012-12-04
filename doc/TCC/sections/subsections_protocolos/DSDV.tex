@@ -1,12 +1,12 @@
 \subsection{\textit{Destination sequenced distance vector} - DSDV}\label{subDSDV} 
-O protocolo DSDV \'e um protocolo de roteamento proativo\cite{gorantala}, baseado no algoritmo de vetor de dist\^ancias, que trabalha requisitando periodicamente, de cada um dos n\'os vizinhos, suas tabelas de roteamento, com a finalidade de mant\^e-las atualizadas. 
+O protocolo DSDV \'e um protocolo de roteamento pr\'o-ativo\cite{gorantala}, baseado no algoritmo de vetor de dist\^ancias, que trabalha requisitando periodicamente, de cada um dos n\'os vizinhos, suas tabelas de roteamento, com a finalidade de mant\^e-las atualizadas. 
 Cada n\'o da rede mant\'em uma tabela de roteamento, contendo o pr\'oximo salto e o n\'umero de saltos para cada destino alcan\c{c}\'avel. 
 As tabelas incluem rotas para todos os n\'os da rede, mesmo que nunca seja necess\'ario enviar pacote para este n\'o. 
 Cada n\'o mant\'em apenas uma rota para cada destino.
 
 Os \textit{loops} de rotas podem ocorrer quando informa\c{c}\~oes de roteamento incorretas s\~ao mantidas na rede ap\'os uma troca de topologia. 
 Geralmente, ocorre quando um n\'o detecta uma queda no enlace com o n\'o vizinho e, antes que consiga propagar sua nova tabela, recebe de outro n\'o informa\c{c}\~ao desatualizada referente \`a conex\~ao interrompida. 
-A vantagem principal do DSDV sobre os protocolos baseados em vetor de dist\^ancias tradicionais \'e que ele garante a aus\^encia de \textit{loops}, usando o conceito de n\'umero de sequ\^encia mantido em cada rota. 
+A vantagem principal do DSDV sobre os protocolos baseados em Vetor de Dist\^ancias tradicionais \'e que ele garante a aus\^encia de \textit{loops}, usando o conceito de n\'umero de sequ\^encia mantido em cada rota. 
 O n\'umero de sequ\^encia \'e estabelecido pelo n\'o destino e \'e incrementado a cada novo aviso de rota.
 As rotas mais recentes possuem um n\'umero de sequ\^encia maior e s\~ao as mais favor\'aveis. 
 Caso os n\'umeros de sequ\^encia sejam iguais, a rota que tiver o menor n\'umero de saltos ser\'a a mais favor\'avel. 
@@ -15,7 +15,7 @@ Neste contexto, o uso de n\'umeros de sequ\^encia faz com que o DSDV se adapte m
 \subsubsection{Exemplo de funcionamento do DSDV}
 
 A Figura \ref{figOpDSDV}, descreve uma rede com 8 hosts. 
-Podemos analisar a mudan\c{c}a de roteamento da tabela do MH4 em rela\c{c}\~ao ao movimento do \textit{host} MH1(\textit{Mobile Host} 1), onde o movimento \'e representado pelas setas com estilo pontilhado. 
+Pode-se analisar a mudan\c{c}a de roteamento da tabela do MH4 em rela\c{c}\~ao ao movimento do \textit{host} MH1(\textit{Mobile Host} 1), onde o movimento \'e representado pelas setas com estilo pontilhado. 
 
 \begin{figure}[H]
 	\centering
@@ -34,7 +34,7 @@ Uma tabela de roteamento do DSDV, cont\'em, para cada n\'o na rede:
 	\item o campo informa\c{c}\~ao, servindo como um ponteiro para indicar a tabela com informa\c{c}\~oes sobre a estabilidade da rota.
 \end{itemize}
 
-Inicialmente, todos os n\'os anunciam suas informa\c{c}\~oes de roteamento para todos os outros n\'os da rede e, portanto, onde a tabela de roteamento do \textit{host} MH4 inicialmente apresenta o seguinte conte\'udo conforme a tabela \ref{tabRtMH4}.
+Inicialmente, todos os n\'os anunciam suas informa\c{c}\~oes de roteamento para todos os outros n\'os da rede e, portanto, a tabela de roteamento do \textit{host} MH4 inicialmente apresenta o seguinte conte\'udo conforme a Tabela \ref{tabRtMH4}.
 
 \begin{table}[H]
 	\centering
@@ -54,12 +54,12 @@ Inicialmente, todos os n\'os anunciam suas informa\c{c}\~oes de roteamento para 
 	\label{tabRtMH4}
 \end{table}
 
-Por\'em, quando o \textit{host} MH1 move sua localiza\c{c}\~ao para pr\'oximo dos \textit{hosts} MH7 e MH8 como apresentado na Figura \ref{figOpDSDV} ent\~ao, o enlace entre MH2 e MH1 vai ser quebrado, resultando em atribui\c{c}\~ao de uma m\'etrica infinita de MH2 para MH1 e o n\'umero de sequ\^encia ser\'a alterado para um n\'umero \'impar na tabela de roteamento em MH2. 
-MH2 atualizar\'a essa informa\c{c}\~ao para os \textit{hosts} vizinhos. 
+Por\'em, quando o \textit{host} MH1 move sua localiza\c{c}\~ao para pr\'oximo dos \textit{hosts} MH7 e MH8 como apresentado na Figura \ref{figOpDSDV} ent\~ao, o enlace entre MH2 e MH1 vai ser quebrado.
+Isto resulta em atribui\c{c}\~ao de uma m\'etrica infinita de MH2 para MH1 e o n\'umero de sequ\^encia ser\'a alterado para um n\'umero \'impar na tabela de roteamento em MH2, que atualizar\'a essa informa\c{c}\~ao para os \textit{hosts} vizinhos. 
 Desde que haja um novo \textit{host} vizinho para MH7 e MH8, eles v\~ao atualizar essa informa\c{c}\~ao nas respectivas tabelas de roteamento e propagar essa nova informa\c{c}\~ao. 
 Agora, MH4 receber\'a esta atualiza\c{c}\~ao de informa\c{c}\~ao de MH6, onde MH6 recebe 2 pacotes de informa\c{c}\~oes de diferentes vizinhos para chegar em MH1 com o mesmo n\'umero de sequ\^encia, mas com diferentes m\'etricas. 
 A sele\c{c}\~ao da rota ir\'a depender da menor contagem de saltos quando o n\'umero de sequ\^encia \'e o mesmo. 
-Agora a tabela de roteamento do MH4 estar\'a com o conte\'udo demonstrado na tabela  \ref{tabNewRtMH4}.
+A tabela de roteamento do MH4 estar\'a com o conte\'udo demonstrado na Tabela  \ref{tabNewRtMH4}.
 
 \begin{table}[H]
 	\centering
