@@ -66,33 +66,53 @@ O documento \cite{rfc793} define que o TCP possui um mecanismo pr\'oprio de cont
 Com base nisso, o CBR(\textit{Constant Bit Rate}) foi selecionado, o qual usa agente UDP(\textit{User Datagram Protocol}), que n\~ao possui um controle de congestionamento pr\'oprio \cite{rfc768}.
 
 \subsection{Leitura dos resultados}
+%coloca em imagem as linhas de saida, e coloca, pode ser vistas na figura tal
+A fim de obter os resultados das simula\c{c}\~oes executadas nesse trabalho e poder realizar a compara\c{c}\~ao dos mesmos, o NS-2 gera arquivos de \textit{log} com informa\c{c}\~oes sobre toda a rede do experimento, sendo o arquivo chamado de \textit{trace file}.
+O arquivo \textit{trace} disponibiliza uma gama de informa\c{c}\~oes sobre as camadas, os n\'os e o roteamento dos pacotes entre eles.
+Algumas linhas da sa\'ida desse arquivo podem ser vistas a seguir:
 
 \begin{verbatim}
-M 0.10000 0 (60.00, 10.00, 0.00), (60.00, 460.00), 1.50
-M 0.10000 1 (200.00, 50.00, 0.00), (200.00, 150.00), 1.50
-M 0.10000 2 (340.00, 10.00, 0.00), (340.00, 460.00), 1.50
-M 0.10000 3 (200.00, 300.00, 0.00), (200.00, 300.00), 1.50
-s -t 0.100000000 -Hs 2 -Hd -2 -Ni 2 -Nx 340.00 -Ny 10.00 -Nz 0.00 
- -Ne -1.000000 -Nl AGT -Nw --- -Ma 0 -Md 0 -Ms 0 -Mt 0 -Is 2.0 
- -Id 0.0 -It cbr -Il 512 -If 0 -Ii 0 -Iv 32 -Pn cbr -Pi 0 -Pf 0 -Po 0 
-r -t 0.100000000 -Hs 2 -Hd -2 -Ni 2 -Nx 340.00 -Ny 10.00 -Nz 0.00 
- -Ne -1.000000 -Nl RTR -Nw --- -Ma 0 -Md 0 -Ms 0 -Mt 0 -Is 2.0 
- -Id 0.0 -It cbr -Il 512 -If 0 -Ii 0 -Iv 32 -Pn cbr -Pi 0 -Pf 0 -Po 0 
-s -t 0.100000000 -Hs 2 -Hd -2 -Ni 2 -Nx 340.00 -Ny 10.00 -Nz 0.00 
- -Ne -1.000000 -Nl RTR -Nw --- -Ma 0 -Md 0 -Ms 0 -Mt 0 -Is 2.255 
- -Id -1.255 -It AODV -Il 48 -If 0 -Ii 0 -Iv 30 -P aodv -Pt 0x2 -Ph 1 
- -Pb 1 -Pd 0 -Pds 0 -Ps 2 -Pss 4 -Pc REQUEST 
-s -t 0.100115000 -Hs 2 -Hd -2 -Ni 2 -Nx 340.00 -Ny 10.00 -Nz 0.00 
- -Ne -1.000000 -Nl MAC -Nw --- -Ma 0 -Md ffffffff -Ms 2 -Mt 800 
- -Is 2.255 -Id -1.255 -It AODV -Il 106 -If 0 -Ii 0 -Iv 30 -P aodv 
- -Pt 0x2 -Ph 1 -Pb 1 -Pd 0 -Pds 0 -Ps 2 -Pss 4 -Pc REQUEST 
-r -t 0.100963485 -Hs 1 -Hd -2 -Ni 1 -Nx 200.00 -Ny 50.00 -Nz 0.00 
- -Ne -1.000000 -Nl MAC -Nw --- -Ma 0 -Md ffffffff -Ms 2 -Mt 800 
- -Is 2.255 -Id -1.255 -It AODV -Il 48 -If 0 -Ii 0 -Iv 30 -P aodv 
- -Pt 0x2 -Ph 1 -Pb 1 -Pd 0 -Pds 0 -Ps 2 -Pss 4 -Pc REQUEST 
-r -t 0.100988485 -Hs 1 -Hd -2 -Ni 1 -Nx 200.00 -Ny 50.00 -Nz 0.00 
- -Ne -1.000000 -Nl RTR -Nw --- -Ma 0 -Md ffffffff -Ms 2 -Mt 800 
- -Is 2.255 -Id -1.255 -It AODV -Il 48 -If 0 -Ii 0 -Iv 30 -P aodv 
- -Pt 0x2 -Ph 1 -Pb 1 -Pd 0 -Pds 0 -Ps 2 -Pss 4 -Pc REQUEST
+s -t 0.100000000 -Hs 2 -Hd -2 -Ni 2 -Nx 340.00 -Ny 10.00 
+ -Nz 0.00 -Ne -1.000000 -Nl AGT -Nw --- -Ma 0 -Md 0 -Ms 0 
+ -Mt 0 -Is 2.0 -Id 0.0 -It cbr -Il 512 -If 0 -Ii 0 -Iv 32 
+ -Pn cbr -Pi 0 -Pf 0 -Po 0 
+r -t 0.100000000 -Hs 2 -Hd -2 -Ni 2 -Nx 340.00 -Ny 10.00 
+ -Nz 0.00 -Ne -1.000000 -Nl RTR -Nw --- -Ma 0 -Md 0 -Ms 0 
+ -Mt 0 -Is 2.0 -Id 0.0 -It cbr -Il 512 -If 0 -Ii 0 -Iv 32 
+ -Pn cbr -Pi 0 -Pf 0 -Po 0 
+s -t 0.100000000 -Hs 2 -Hd -2 -Ni 2 -Nx 340.00 -Ny 10.00 
+ -Nz 0.00 -Ne -1.000000 -Nl RTR -Nw --- -Ma 0 -Md 0 -Ms 0 
+ -Mt 0 -Is 2.255 -Id -1.255 -It AODV -Il 48 -If 0 -Ii 0 
+ -Iv 30 -P aodv -Pt 0x2 -Ph 1 -Pb 1 -Pd 0 -Pds 0 -Ps 2 
+ -Pss 4 -Pc REQUEST 
+s -t 0.100115000 -Hs 2 -Hd -2 -Ni 2 -Nx 340.00 -Ny 10.00 
+ -Nz 0.00 -Ne -1.000000 -Nl MAC -Nw --- -Ma 0 -Md ffffffff 
+ -Ms 2 -Mt 800 -Is 2.255 -Id -1.255 -It AODV -Il 106 -If 0 
+ -Ii 0 -Iv 30 -P aodv -Pt 0x2 -Ph 1 -Pb 1 -Pd 0 -Pds 0 
+ -Ps 2 -Pss 4 -Pc REQUEST 
 \end{verbatim}
 
+Para o estudo das m\'etricas deste trabalho, apenas algumas informa\c{c}\~oes contidas em cada linhas de \textit{trace} s\~ao relevantes.
+Cada uma destas linhas descreve um evento realizado pelo objeto Simulator dentro do NS-2.
+Cada evento possui um tipo e sua descri\c{c}\~ao em termos de tempo de ocorr\^encia, informa\c{c}\~oes de posi\c{c}\~ao, n\'ivel de \textit{trace}, informa\c{c}\~oes de pacote no n\'ivel da camada de rede, entre outros.
+
+Essas informa\c{c}\~oes est\~ao separadas por um caractere de espa\c{c}o em branco e, com exce\c{c}\~ao da primeira informa\c{c}\~ao, que \'e um caractere de indica\c{c}\~ao do tipo do evento, todas as demais informa\c{c}\~oes s\~ao precedidas por \textit{flags} que indicam seu significado \cite{FallVaradhan}.
+
+Existem 4 tipos de eventos, que s\~ao:
+\begin{itemize}
+	\item s - envio (\textit{send});
+	\item r - recebimento (\textit{receive});
+	\item d - descarte (\textit{drop});
+	\item f - encaminhamento (\textit{forward}).
+\end{itemize}
+
+No n\'ivel de n\'os, a informa\c{c}\~ao mais relevante \'e o n\'ivel de \textit{trace} (-Nl) que pode ser seguido por AGT(\textit{agent}), RTR(\textit{router}), ou MAC(quadro da camada de enlace).
+
+No n\'ivel de pacotes da camada de rede, as informa\c{c}\~oes de interesse s\~ao:
+\begin{itemize}
+	\item -Ni n\'umero do n\'o;
+	\item -Il tamanho em \textit{bytes} do pacote;
+	\item -It tipo do pacote;
+	\item -Hs salto atual do n\'o;
+	\item -Hd pr\'oximo salto;
+\end{itemize}

@@ -1,8 +1,8 @@
 \section{Experimentos e resultados}\label{experimentos}
 \subsection{Experimentos}
-Para compreender o funcionamento do simulador NS-2 e tamb\'em estudar simula\c{c}\~oes de comunica\c{c}\~ao em cen\'arios militares, foram definidos 2 experimentos te\'oricos, sendo o Experimento 1, um teste simples de converg\^encia de rotas, e o Experimento 2, baseado em estudos realizados por \cite{pereira}, o qual representa um caso de assalto e tomada de posi\c{c}\~ao inimiga.
+Para compreender o funcionamento do simulador NS-2 e tamb\'em estudar simula\c{c}\~oes de comunica\c{c}\~ao em cen\'arios militares, foram definidos dois experimentos te\'oricos, sendo o Experimento 1, um teste simples de converg\^encia de rotas, e o Experimento 2, baseado em estudos realizados por \cite{pereira}, o qual representa um caso de assalto e tomada de posi\c{c}\~ao inimiga.
 
-Cada experimento possui suas caracter\'isticas, mas exite uma semalhan\c{c}a base, que \'e o tr\'afego que ir\'a caminhar pela rede, como comentado na se\c{c}\~ao \ref{trafegoDados}, o qual foi escolhido o CBR.
+Cada experimento possui suas caracter\'isticas, mas exite uma semelhan\c{c}a base, que \'e o tr\'afego que ir\'a caminhar pela rede, como comentado na se\c{c}\~ao \ref{trafegoDados}, o qual foi escolhido o CBR.
 
 \subsubsection{Experimento 1}
 O Experimento 1 baseia-se na ideia simples de um protocolo de rede \textit{ad hoc}, roteamento din\^amico.
@@ -107,8 +107,8 @@ Na execu\c{c}\~ao do experimento com o DSDV, considerando quando a comunica\c{c}
 	\label{tabExp1Result}
 \end{table}
 
-Entretanto, quando um protocolo possui um funcionamento pr\'o-ativo, por\'em sendo baseado em Estado de Conex\~ao, que \'e o caso do OLSR, percebe-se que a taxa de entrega aumenta em rela\c{c}\~ao ao DSVD, que \'e baseado em Vetor de Dist\^ancias.
-Esse aumento ocorre porque, quando a topologia da rede do Experimento 1 \'e modificada, a base Estado de Conex\~ao detecta a altera\c{c}\~ao de conex\~ao dos n\'os vizinhos, atualizando suas tabelas de rotas, o que altera o intervalo de atualiza\c{c}\~ao das rotas.
+Entretanto, quando um protocolo possui um funcionamento pr\'o-ativo, por\'em sendo baseado em Estado de Enlace, que \'e o caso do OLSR, percebe-se que a taxa de entrega aumenta em rela\c{c}\~ao ao DSVD, que \'e baseado em Vetor de Dist\^ancias.
+Esse aumento ocorre porque, quando a topologia da rede do Experimento 1 \'e modificada, a base Estado de Enlace detecta a altera\c{c}\~ao de conex\~ao dos n\'os vizinhos, atualizando suas tabelas de rotas, o que altera o intervalo de atualiza\c{c}\~ao das rotas.
 
 O objetivo inicial desse experimento era analisar o tempo de converg\^encia entre os protocolos, o qual n\~ao foi muito significativo.
 Analisando os resultados de Atraso M\'edio de cada protocolo, percebe-se que as diferen\c{c}as foram menores de 1 ms entre os protocolos de roteamento, todos trabalhando pr\'oximos a 11 milissegundos.
@@ -117,7 +117,7 @@ Comparando as \'ultimas duas m\'etricas de desempenho, sendo elas, n\'umeros de 
 Esse resultado deve-se ao fato de que o AODV duplica os pacotes de roteamento, e \cite{ramachandran} comenta que o AODV n\~ao reutiliza informa\c{c}\~oes de roteamento, at\'e mesmo em casos comuns de comunica\c{c}\~ao.
 J\'a o DSDV, mesmo atualizando as tabelas de roteamento a cada instante de tempo, pode reutilizar informa\c{c}\~oes, diminuindo o n\'umero de pacotes de roteamento. 
 
-Os resultados do protocolo OLSR podem ser explicados pelo fato de que o mesmo atualiza suas rotas quando o estado de conex\~ao muda. Assim, aumenta um pouco o n\'umero de pacotes em rela\c{c}\~ao ao DSDV, por\'em se demonstra eficiente com rela\c{c}\~ao ao AODV pela sua caracter\'istica pr\'o-ativa.
+Os resultados do protocolo OLSR podem ser explicados pelo fato de que o mesmo atualiza suas rotas quando o Estado de Enlace muda. Assim, aumenta um pouco o n\'umero de pacotes em rela\c{c}\~ao ao DSDV, por\'em se demonstra eficiente com rela\c{c}\~ao ao AODV pela sua caracter\'istica pr\'o-ativa.
 
 \subsubsection{Experimento 2}
 Diferentemente do Experimento 1, o Experimento 2 possui caracter\'isticas espec\'ificas de mobilidade, em que cada soldado no cen\'ario n\~ao vai percorrer um caminho cont\'inuo, e tamb\'em, n\~ao vai ter uma velocidade constante de avan\c{c}o para o objetivo final do cen\'ario.
@@ -148,6 +148,6 @@ A mesma caracter\'istica pr\'o-ativa pode explicar o resultado do protocolo OLSR
 
 Analisando as m\'etricas N\'umero de Pacotes e N\'umero de \textit{MegaBytes}, percebe-se que o DSDV tamb\'em foi superior em rela\c{c}\~ao ao AODV na efici\^encia de roteamento.
 Esse resultado foi favorecido pela caracter\'istica pr\'o-ativa em um experimento com um maior n\'umero de n\'os, logo que o DSDV n\~ao precisa buscar toda a topologia da rede toda a vez que necessita comunicar com o destino, que \'e o caso do AODV. 
-O mesmo pode-se dizer do protocolo OLSR, por\'em, ele resultou em um n\'umero maior de pacotes que o DSDV por causa da sua base em Estado de Conex\~ao, atualizando as tabelas de roteamento a cada mudan\c{c}a de conex\~ao dos n\'os vizinhos.
+O mesmo pode-se dizer do protocolo OLSR, por\'em, ele resultou em um n\'umero maior de pacotes que o DSDV por causa da sua base em Estado de Enlace, atualizando as tabelas de roteamento a cada mudan\c{c}a de conex\~ao dos n\'os vizinhos.
 
 

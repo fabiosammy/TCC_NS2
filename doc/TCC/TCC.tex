@@ -13,6 +13,11 @@
 \usepackage{subfigure}
 \usepackage{setspace}
 
+  \usepackage{enumitem}
+  \let\olditemize\itemize
+  \let\endolditemize\enditemize
+  \renewenvironment{itemize}{\olditemize[topsep=6pt,leftmargin=1.17cm]}{\endolditemize}
+
 \sloppy
 
 \title{Comparativo de protocolos de roteamento em redes \textit{ad hoc} m\'oveis em cen\'arios militares.}
@@ -38,7 +43,7 @@
   \setlength{\leftmargini}{1.70cm}
   \setlength{\labelsep}{.5em}
   \setlength{\parindent}{1.27cm}
-  \setlength{\parskip}{6pt}
+  \setlength{\parskip}{0pt}
 
 \maketitle
 
@@ -52,8 +57,10 @@ Ad hoc networks; military scenarios, routing protocols, AODV, DSDV, OLSR;
 \end{keyWord}
 
 \begin{resumo}
-Este artigo apresenta um estudo de diferentes protocolos de roteamento em redes ad hoc, analizando a performance em cen\'arios militares, realizando compara\c{c}\~oes entre os mesmos atrav\'es de simula\c{c}\~oes com a ferramenta NS-2. 
-Onde foram utilizados os protocolos DSDV, AODL e OLSR em 2 diferentes cen\'arios, dos quais podemos analisar um pouco o desempenho de cada um.
+Este artigo apresenta um estudo de diferentes protocolos de roteamento em redes ad hoc, analisando a performance dos mesmos em cen\'arios militares. 
+Foi realizado compara\c{c}\~oes entre eles atrav\'es de simula\c{c}\~oes com a ferramenta de simula\c{c}\~ao NS-2. 
+Os protocolos selecionados para estudo foram o DSDV, AODV e OLSR, e criados dois diferentes cen\'arios, em que resultaram em um de desempenho diferente para cada situa\c{c}\~ao que os protocolos foram simulados.
+O artigo esta dividido em uma breve introdu\c{c}\~ao sobre redes ad hoc, defini\c{c}\~oes dos protocolos de roteamento estudados, a metodologia utilizada nos experimentos e a an\'alise das simula\c{c}\~oes realizadas.
 \end{resumo}
 
 \begin{palavraChave}

@@ -1,6 +1,6 @@
-\subsection{\textit{Optimized link state routing} - OLSR}
-O protocolo OLSR \cite{rfc3626} \'e um protocolo pr\'o-ativo, baseado em estado de conex\~ao, onde cada n\'o possui as informa\c{c}\~oes de rotas e compartilham entre si constantemente. 
-O diferencial desse protocolo em rela\c{c}\~ao ao DSDV, que tamb\'em \'e pro-\'ativo, por\'em baseado em dist\^ancia de vetores, \'e que o OLSR diminui o tr\'afego de informa\c{c}\~oes de roteamento utilizando somente alguns n\'os pr\'e-selecionados, para retransmitir as mensagens de descoberta de rotas na rede.
+\subsection{\textit{Optimized link state routing} - OLSR}\label{subOLSR}
+O protocolo OLSR \cite{rfc3626} \'e um protocolo pr\'o-ativo, baseado em Estado de Enlace, onde cada n\'o possui as informa\c{c}\~oes de rotas e compartilham entre si constantemente. 
+O diferencial desse protocolo em rela\c{c}\~ao ao DSDV, que tamb\'em \'e pro-\'ativo, por\'em baseado em Vetor de Dist\^ancias, \'e que o OLSR diminui o tr\'afego de informa\c{c}\~oes de roteamento utilizando somente alguns n\'os pr\'e-selecionados, para retransmitir as mensagens de descoberta de rotas na rede.
 Essa t\'ecnica \'e denominada MPR (\textit{Multipoint Relay}).
 
 \subsubsection{Exemplo de funcionamento do OLSR}
@@ -44,4 +44,9 @@ O mecanismo para selecionar os vizinhos que ir\~ao retransmitir os pacotes, deno
 	\label{fig:olsrOperation}
 \end{figure}
 
+\subsubsection{Vantagens do OLSR}
+\begin{itemize}
+	\item Atualiza as rotas no momento em que a topologia da rede altera.
+\end{itemize}
 
+\subsubsection{Limita\c{c}\~oes e desvantagens do OLSR}
